@@ -15,20 +15,24 @@ export default function Home() {
 }
 
 function Collaborators() {
-  const { collaborators } = useCollaborators();
+  const { collaborators, loading } = useCollaborators();
 
   return (
     <section id="collaborators">
       <h2>Collaborators</h2>
-      <ul>
-        {collaborators.map((collaborator) => (
-          <li key={collaborator.id}>
-            <Link href={`collaborators/${collaborator.slug}`}>
-              {collaborator.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <ul>
+          {collaborators.map((collaborator) => (
+            <li key={collaborator.id}>
+              <Link href={`collaborators/${collaborator.attributes.slug}`}>
+                {collaborator.attributes.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </section>
   );
 }
