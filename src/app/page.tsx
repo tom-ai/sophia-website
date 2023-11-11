@@ -6,35 +6,6 @@ import { useParams } from 'next/navigation';
 export default function Home() {
   return (
     <>
-      <Nav />
-      <main>
-        <Main />
-        {/* <Route path="collaborators/:slug" element={<Collaborator />} /> */}
-      </main>
-      <Footer />
-    </>
-  );
-}
-
-function Test() {
-  return <h1>test</h1>;
-}
-
-function Collaborator() {
-  const { slug } = useParams();
-  console.log(slug);
-
-  return (
-    <header>
-      <h3>Working with...</h3>
-      <h2>{slug}</h2>
-    </header>
-  );
-}
-
-function Main() {
-  return (
-    <>
       <Header />
       <Image />
       <Collaborators />
@@ -99,23 +70,10 @@ function About() {
   );
 }
 
-function Nav() {
-  return (
-    <header>
-      <nav>
-        <Link href={''}>
-          <h1>Sophia Dignam</h1>
-          <h2>
-            <small>Session Musician</small>
-          </h2>
-        </Link>
-      </nav>
-    </header>
-  );
-}
 function Header() {
   return (
     <>
+      <p>The most awesome violist in the world</p>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
         <Link role="button" href="" aria-disabled>
           About Sophia
@@ -125,16 +83,5 @@ function Header() {
         </Link>
       </div>
     </>
-  );
-}
-
-function Footer() {
-  return (
-    <footer>
-      <hr />
-      <p>
-        <small>I hope you enjoyed my website! Built by Tom ❤️</small>
-      </p>
-    </footer>
   );
 }

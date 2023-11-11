@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './pico.css';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,7 +17,37 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Nav />
+        <main>{children}</main>
+        <Footer />
+      </body>
     </html>
+  );
+}
+
+function Nav() {
+  return (
+    <header>
+      <nav>
+        <Link href={'/'}>
+          <h2>
+            <small>Session Musician</small>
+          </h2>
+          <h1>Sophia Dignam</h1>
+        </Link>
+      </nav>
+    </header>
+  );
+}
+
+function Footer() {
+  return (
+    <footer>
+      <hr />
+      <p>
+        <small>I hope you enjoyed my website! Built by Tom ❤️</small>
+      </p>
+    </footer>
   );
 }
