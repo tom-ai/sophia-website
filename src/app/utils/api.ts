@@ -8,4 +8,12 @@ export class api {
     const { data } = await res.json();
     return data;
   }
+
+  static async getCollaborator(slug: string) {
+    const path = `/collaborators/${slug}?fields[0]=name`;
+    const res = await fetch(this.url + path);
+
+    const { data } = await res.json();
+    return data;
+  }
 }
