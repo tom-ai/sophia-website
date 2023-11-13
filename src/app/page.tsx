@@ -1,12 +1,12 @@
-'use client';
 import Link from 'next/link';
-import useCollaborators from './hooks/useCollaborators';
+// import useCollaborators from './hooks/useCollaborators';
 import { useParams } from 'next/navigation';
+import { api } from './utils/api';
 
 export default function Home() {
   return (
     <>
-      <Header />
+      <Hero />
       <Image />
       <Collaborators />
       <About />
@@ -14,25 +14,21 @@ export default function Home() {
   );
 }
 
-function Collaborators() {
-  const { collaborators, loading } = useCollaborators();
+async function Collaborators() {
+  const collaborators = await api.getCollaborators();
 
   return (
     <section id="collaborators">
       <h2>Collaborators</h2>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <ul>
-          {collaborators.map((collaborator) => (
-            <li key={collaborator.id}>
-              <Link href={`collaborators/${collaborator.attributes.slug}`}>
-                {collaborator.attributes.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
+      <ul>
+        {collaborators.map((collaborator) => (
+          <li key={collaborator.id}>
+            <Link href={`collaborators/${collaborator.attributes.slug}`}>
+              {collaborator.attributes.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }
@@ -74,7 +70,7 @@ function About() {
   );
 }
 
-function Header() {
+function Hero() {
   return (
     <>
       <p>The most awesome violist in the world</p>

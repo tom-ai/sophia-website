@@ -1,9 +1,15 @@
+import { Collaborator } from '../types/Collaborator';
+
 export class api {
   static url = 'http://127.0.0.1:1337/api';
 
-  static async getCollaborators() {
+  static async getCollaborators(): Promise<Collaborator[]> {
     const path = '/collaborators?fields[0]=name&fields[1]=slug';
     const res = await fetch(this.url + path);
+
+    if (!res.ok) {
+      throw new Error('Failed to fetch data');
+    }
 
     const { data } = await res.json();
     return data;
