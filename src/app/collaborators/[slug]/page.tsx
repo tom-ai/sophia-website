@@ -7,6 +7,7 @@ export default async function Collaborator({
 }) {
   const collaborator = await api.getCollaborator(params.slug);
 
+  console.log(collaborator);
   return (
     <>
       <header>

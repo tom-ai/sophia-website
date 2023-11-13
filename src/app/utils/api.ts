@@ -18,7 +18,7 @@ export class api {
 
   static async getCollaborator(slug: string): Promise<Collaborator> {
     const path = `/collaborators/${slug}?fields[0]=name`;
-    const res = await fetch(this.url + path);
+    const res = await fetch(this.url + path, { cache: 'no-store' });
 
     if (!res.ok) {
       // throw new Error('Failed to fetch data');
