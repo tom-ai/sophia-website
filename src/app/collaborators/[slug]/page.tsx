@@ -1,6 +1,5 @@
-'use client';
 import { api } from '@/app/utils/api';
-import { BlocksRenderer } from '@strapi/blocks-react-renderer';
+import TextBlock from '@/app/components/TextBlock';
 
 export default async function Collaborator({
   params,
@@ -12,11 +11,10 @@ export default async function Collaborator({
   return (
     <>
       <header>
-        <strong>Working with...</strong>
         <h2>{collaborator.attributes.name}</h2>
       </header>
       <article>
-        {<BlocksRenderer content={collaborator.attributes.description} />}
+        <TextBlock content={collaborator.attributes.description} />
       </article>
     </>
   );
