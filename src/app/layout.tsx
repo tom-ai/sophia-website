@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} container `}>
         <Nav />
         <main>{children}</main>
         <Footer />
@@ -31,10 +31,11 @@ function Nav() {
     <header>
       <nav>
         <Link href={'/'}>
-          <h2>
+          <h1>
             <small>Session Musician</small>
-          </h2>
-          <h1>Sophia Dignam</h1>
+            <br />
+            Sophia Dignam
+          </h1>
         </Link>
       </nav>
     </header>

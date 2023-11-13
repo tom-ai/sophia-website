@@ -3,5 +3,6 @@ export type Collaborator = {
   attributes: {
     name: string;
     slug: string;
+    description: any[];
   };
 };
