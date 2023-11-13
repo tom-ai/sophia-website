@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { Collaborator } from '../types/Collaborator';
 
 export class api {
@@ -15,9 +16,14 @@ export class api {
     return data;
   }
 
-  static async getCollaborator(slug: string) {
+  static async getCollaborator(slug: string): Promise<Collaborator> {
     const path = `/collaborators/${slug}?fields[0]=name`;
     const res = await fetch(this.url + path);
+
+    if (!res.ok) {
+      // throw new Error('Failed to fetch data');
+      notFound();
+    }
 
     const { data } = await res.json();
     return data;

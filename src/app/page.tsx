@@ -1,6 +1,4 @@
 import Link from 'next/link';
-// import useCollaborators from './hooks/useCollaborators';
-import { useParams } from 'next/navigation';
 import { api } from './utils/api';
 
 export default function Home() {

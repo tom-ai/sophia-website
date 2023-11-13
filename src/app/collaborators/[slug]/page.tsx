@@ -1,19 +1,22 @@
-'use client';
+import { api } from '@/app/utils/api';
 
-import useCollaborator from '@/app/hooks/useCollaborator';
-
-export default function Collaborator({ params }: { params: { slug: string } }) {
-  const { collaborator, loading } = useCollaborator(params.slug);
+export default async function Collaborator({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const collaborator = await api.getCollaborator(params.slug);
 
   return (
-    <header>
-      <h3>Working with...</h3>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        // handle nulL!
-        <>{<h2>{collaborator?.attributes.name}</h2>}</>
-      )}
-    </header>
+    <>
+      <header>
+        <h3>Working with...</h3>
+        <h2>{collaborator.attributes.name}</h2>
+      </header>
+      <article>
+        <p>Information here</p>
+        <p>And more information here</p>
+      </article>
+    </>
   );
 }
