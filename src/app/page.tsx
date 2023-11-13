@@ -17,7 +17,7 @@ async function Collaborators() {
 
   return (
     <section id="collaborators">
-      <h2>Collaborators</h2>
+      <h2>Music collaborations</h2>
       <ul>
         {collaborators.map((collaborator) => (
           <li key={collaborator.id}>
@@ -44,7 +44,7 @@ function Image() {
 
 function About() {
   return (
-    <section id="#about">
+    <section id="about">
       <h2>About Sophia</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur, adipiscingelit, sed do eiusmod.
@@ -73,7 +73,7 @@ function Hero() {
     <>
       <p>The most awesome violist in the world</p>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-        <Link role="button" href="" aria-disabled>
+        <Link role="button" href="#about">
           About Sophia
         </Link>
         <Link className="outline" role="button" href="https://instagram.com/">

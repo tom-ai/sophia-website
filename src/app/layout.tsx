@@ -32,9 +32,9 @@ function Nav() {
       <nav>
         <Link href={'/'}>
           <h1>
-            <small>Session Musician</small>
-            <br />
             Sophia Dignam
+            <br />
+            <small>Session Musician</small>
           </h1>
         </Link>
       </nav>
