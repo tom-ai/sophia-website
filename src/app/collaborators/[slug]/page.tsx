@@ -1,6 +1,7 @@
 import { api } from '@/app/utils/api';
 import TextBlock from '@/app/components/TextBlock';
 import EmbedBody from '@/app/components/EmbedBody';
+import Iframe from 'react-iframe';
 
 export default async function Collaborator({
   params,
@@ -25,7 +26,14 @@ export default async function Collaborator({
             {posts.map((post) => (
               <li key={post.id}>
                 <p>{post.attributes.message}</p>
-                {<EmbedBody text={post.attributes.embed} />}
+                {/* {<EmbedBody text={post.attributes.embed} />} */}
+                <Iframe
+                  url="https://open.spotify.com/embed/album/0aZUS5UIfDLXGlKznCNy31?utm_source=generator"
+                  width="100%"
+                  height="352"
+                  loading="lazy"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                />
               </li>
             ))}
           </ul>
