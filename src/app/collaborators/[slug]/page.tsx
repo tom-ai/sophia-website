@@ -26,13 +26,14 @@ export default async function Collaborator({
             {posts.map((post) => (
               <li key={post.id}>
                 <p>{post.attributes.message}</p>
-                {/* {<EmbedBody text={post.attributes.embed} />} */}
                 <Iframe
-                  url="https://open.spotify.com/embed/album/0aZUS5UIfDLXGlKznCNy31?utm_source=generator"
+                  url={post.attributes.embed}
                   width="100%"
                   height="352"
                   loading="lazy"
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; fullscreen; picture-in-picture; web-share"
+                  title={`Embedded content for ${collaborator.attributes.name}`}
+                  allowFullScreen
                 />
               </li>
             ))}
