@@ -2,6 +2,7 @@ import { api } from '@/app/utils/api';
 import TextBlock from '@/app/components/TextBlock';
 import EmbedBody from '@/app/components/EmbedBody';
 import Iframe from 'react-iframe';
+import Link from 'next/link';
 
 export default async function Collaborator({
   params,
@@ -12,6 +13,7 @@ export default async function Collaborator({
 
   //if collaborator.attributes.posts.length > 0 ...
   const posts = await api.getPostsByCollaborator(params.slug);
+  console.log(posts[0]);
 
   function makeDate(dateString: string) {
     return new Date(dateString);
@@ -23,11 +25,17 @@ export default async function Collaborator({
         <h2>{collaborator.attributes.name}</h2>
         <TextBlock content={collaborator.attributes.description} />
       </header>
-      <article>
-        <h3>Recent Posts</h3>
+      <section>
+        <h3>Recent Collaborations</h3>
         {posts.length > 0 ? (
           posts.map((post) => (
-            <figure key={post.id}>
+            <article key={post.id} id={`${post.attributes.date}`}>
+              <header>
+                <Link href={`#${post.attributes.date}`} replace>
+                  <h4>{post.attributes.type}</h4>
+                </Link>
+                <p>{post.attributes.message}</p>
+              </header>
               <Iframe
                 url={post.attributes.embed}
                 width="100%"
@@ -37,29 +45,29 @@ export default async function Collaborator({
                 title={`Embedded content for ${collaborator.attributes.name}`}
                 allowFullScreen
               />
-              <figcaption>
-                <time dateTime={post.attributes.date}>
-                  {makeDate(post.attributes.date).toLocaleDateString(
-                    undefined,
-                    {
-                      weekday: 'long',
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric',
-                    }
-                  )}
-                </time>
-                <br />
-                <p>{post.attributes.message}</p>
-              </figcaption>
-            </figure>
+              <footer>
+                <p>
+                  Posted on{' '}
+                  <time dateTime={post.attributes.date}>
+                    {makeDate(post.attributes.date).toLocaleDateString(
+                      undefined,
+                      {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
+                      }
+                    )}
+                  </time>
+                </p>
+              </footer>
+            </article>
           ))
         ) : (
           <p>
             <i>No posts yet</i>
           </p>
         )}
-      </article>
+      </section>
     </>
   );
 }

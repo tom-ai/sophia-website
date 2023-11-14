@@ -4,5 +4,6 @@ export type Post = {
     date: string;
     message: string;
     embed: string;
+    type: string;
   };
 };
