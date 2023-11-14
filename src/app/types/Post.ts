@@ -1,7 +1,7 @@
 export type Post = {
   id: number;
   attributes: {
-    date: Date;
+    date: string;
     message: string;
     embed: string;
   };

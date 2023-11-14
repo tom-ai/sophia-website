@@ -13,6 +13,10 @@ export default async function Collaborator({
   //if collaborator.attributes.posts.length > 0 ...
   const posts = await api.getPostsByCollaborator(params.slug);
 
+  function makeDate(dateString: string) {
+    return new Date(dateString);
+  }
+
   return (
     <>
       <header>
@@ -20,24 +24,36 @@ export default async function Collaborator({
         <TextBlock content={collaborator.attributes.description} />
       </header>
       <article>
-        <h3>Posts</h3>
+        <h3>Recent Posts</h3>
         {posts.length > 0 ? (
-          <ul>
-            {posts.map((post) => (
-              <li key={post.id}>
+          posts.map((post) => (
+            <figure key={post.id}>
+              <Iframe
+                url={post.attributes.embed}
+                width="100%"
+                height="352"
+                loading="lazy"
+                allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; fullscreen; picture-in-picture; web-share"
+                title={`Embedded content for ${collaborator.attributes.name}`}
+                allowFullScreen
+              />
+              <figcaption>
+                <time dateTime={post.attributes.date}>
+                  {makeDate(post.attributes.date).toLocaleDateString(
+                    undefined,
+                    {
+                      weekday: 'long',
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    }
+                  )}
+                </time>
+                <br />
                 <p>{post.attributes.message}</p>
-                <Iframe
-                  url={post.attributes.embed}
-                  width="100%"
-                  height="352"
-                  loading="lazy"
-                  allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; fullscreen; picture-in-picture; web-share"
-                  title={`Embedded content for ${collaborator.attributes.name}`}
-                  allowFullScreen
-                />
-              </li>
-            ))}
-          </ul>
+              </figcaption>
+            </figure>
+          ))
         ) : (
           <p>
             <i>No posts yet</i>
