@@ -33,7 +33,9 @@ export class api {
     const path = `/posts?filters[collaborators][slug][$eq]=${slug}&fields[0]=message&fields[1]=date&fields[2]=embed&fields[3]=type`;
     const res = await fetch(this.url + path, { cache: 'no-store' });
 
-    if (!res.ok) throw new Error('Failed to fetch posts');
+    if (!res.ok) {
+      notFound();
+    }
 
     const { data } = await res.json();
     return data;
