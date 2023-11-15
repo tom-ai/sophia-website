@@ -1,6 +1,5 @@
 import { api } from '@/app/utils/api';
 import TextBlock from '@/app/components/TextBlock';
-import EmbedBody from '@/app/components/EmbedBody';
 import Iframe from 'react-iframe';
 import Link from 'next/link';
 
@@ -23,8 +22,11 @@ export default async function Collaborator({
     <>
       <header>
         <h2>{collaborator.attributes.name}</h2>
-        <TextBlock content={collaborator.attributes.description} />
       </header>
+      <section>
+        <h3>About</h3>
+        <TextBlock content={collaborator.attributes.description} />
+      </section>
       <section>
         <h3>Recent Collaborations</h3>
         {posts.length > 0 ? (
@@ -44,6 +46,7 @@ export default async function Collaborator({
                 allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; fullscreen; picture-in-picture; web-share"
                 title={`Embedded content for ${collaborator.attributes.name}`}
                 allowFullScreen
+                styles={{ borderRadius: '12px' }}
               />
               <footer>
                 <p>
