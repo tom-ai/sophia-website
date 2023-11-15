@@ -10,7 +10,8 @@ export class api {
     const res = await fetch(this.url + path, { cache: 'no-store' });
 
     if (!res.ok) {
-      throw new Error('Failed to fetch data');
+      // throw new Error('Failed to fetch data');
+      notFound();
     }
 
     const { data } = await res.json();
