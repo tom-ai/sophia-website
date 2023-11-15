@@ -10,8 +10,7 @@ export class api {
     const res = await fetch(this.url + path, { cache: 'no-store' });
 
     if (!res.ok) {
-      // throw new Error('Failed to fetch data');
-      notFound();
+      throw new Error('Failed to fetch data');
     }
 
     const { data } = await res.json();
@@ -23,7 +22,7 @@ export class api {
     const res = await fetch(this.url + path, { cache: 'no-store' });
 
     if (!res.ok) {
-      notFound();
+      throw new Error('Failed to fetch data');
     }
 
     const { data } = await res.json();
@@ -35,7 +34,7 @@ export class api {
     const res = await fetch(this.url + path, { cache: 'no-store' });
 
     if (!res.ok) {
-      notFound();
+      throw new Error('Failed to fetch data');
     }
 
     const { data } = await res.json();
