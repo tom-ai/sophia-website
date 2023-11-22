@@ -34,9 +34,9 @@ export default async function Collaborator({
           posts.map((post) => (
             <article key={post.id} id={`${post.attributes.date}`}>
               <header>
-                <Link href={`#${post.attributes.date}`} replace>
-                  <h4>{post.attributes.type}</h4>
-                </Link>
+                <h4>
+                  <small>{collaborator.attributes.name}</small>
+                </h4>
                 <p>{post.attributes.message}</p>
               </header>
               <Iframe

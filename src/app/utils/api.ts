@@ -50,7 +50,7 @@ export class api {
         ? process.env.STRAPI_URL
         : 'http://127.0.0.1:1337/api';
 
-    const path = `/posts?filters[collaborators][slug][$eq]=${slug}&fields[0]=message&fields[1]=date&fields[2]=embed`;
+    const path = `/posts?filters[collaborators][slug][$eq]=${slug}&fields[0]=message&fields[1]=date&fields[2]=embed&populate[0]=collaborators`;
     const res = await fetch(baseURL + path, { cache: 'no-store' });
 
     if (!res.ok) {
