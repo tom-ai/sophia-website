@@ -22,10 +22,12 @@ export default async function Collaborator({
       <header>
         <h2>{collaborator.attributes.name}</h2>
       </header>
-      <section>
-        <h3>About</h3>
-        <TextBlock content={collaborator.attributes.description} />
-      </section>
+      {collaborator.attributes.description && (
+        <section>
+          <h3>About</h3>
+          <TextBlock content={collaborator.attributes.description} />
+        </section>
+      )}
       <section>
         <h3>Recent Collaborations</h3>
         {posts.length > 0 ? (
