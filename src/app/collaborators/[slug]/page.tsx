@@ -12,7 +12,6 @@ export default async function Collaborator({
 
   //if collaborator.attributes.posts.length > 0 ...
   const posts = await api.getPostsByCollaborator(params.slug);
-  console.log(posts[0]);
 
   function makeDate(dateString: string) {
     return new Date(dateString);

@@ -2,15 +2,21 @@ import { notFound } from 'next/navigation';
 import { Collaborator } from '../types/Collaborator';
 import { Post } from '../types/Post';
 
+const baseURL =
+  process.env.NODE_ENV === 'production'
+    ? process.env.STRAPI_URL
+    : 'http://127.0.0.1:1337/api';
+
 export class api {
-  static url = 'http://127.0.0.1:1337/api';
+  static url = baseURL;
 
   static async getCollaborators(): Promise<Collaborator[]> {
     const path = '/collaborators?fields[0]=name&fields[1]=slug';
     const res = await fetch(this.url + path, { cache: 'no-store' });
 
     if (!res.ok) {
-      throw new Error('Failed to fetch data');
+      // throw new Error('Failed to fetch data');
+      notFound();
     }
 
     const { data } = await res.json();
@@ -18,11 +24,12 @@ export class api {
   }
 
   static async getCollaborator(slug: string): Promise<Collaborator> {
-    const path = `/collaborators/${slug}?fields[0]=name`;
+    const path = `/collaborators/${slug}`;
     const res = await fetch(this.url + path, { cache: 'no-store' });
 
     if (!res.ok) {
-      throw new Error('Failed to fetch data');
+      // throw new Error('Failed to fetch collaborator');
+      notFound();
     }
 
     const { data } = await res.json();
@@ -30,11 +37,12 @@ export class api {
   }
 
   static async getPostsByCollaborator(slug: string): Promise<Post[]> {
-    const path = `/posts?filters[collaborators][slug][$eq]=${slug}&fields[0]=message&fields[1]=date&fields[2]=embed&fields[3]=type`;
+    const path = `/posts?filters[collaborators][slug][$eq]=${slug}&fields[0]=message&fields[1]=date&fields[2]=embed`;
     const res = await fetch(this.url + path, { cache: 'no-store' });
 
     if (!res.ok) {
-      throw new Error('Failed to fetch data');
+      // throw new Error('Failed to fetch posts');
+      notFound();
     }
 
     const { data } = await res.json();
