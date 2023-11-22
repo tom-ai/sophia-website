@@ -2,17 +2,20 @@ import { notFound } from 'next/navigation';
 import { Collaborator } from '../types/Collaborator';
 import { Post } from '../types/Post';
 
-const baseURL =
-  process.env.NODE_ENV === 'production'
-    ? process.env.STRAPI_URL
-    : 'http://127.0.0.1:1337/api';
+// const baseURL =
+//   process.env.NODE_ENV === 'production'
+//     ? process.env.STRAPI_URL
+//     : 'http://127.0.0.1:1337/api';
 
 export class api {
-  static url = baseURL;
-
   static async getCollaborators(): Promise<Collaborator[]> {
+    const baseURL =
+      process.env.NODE_ENV === 'production'
+        ? process.env.STRAPI_URL
+        : 'http://127.0.0.1:1337/api';
+
     const path = '/collaborators?fields[0]=name&fields[1]=slug';
-    const res = await fetch(this.url + path, { cache: 'no-store' });
+    const res = await fetch(baseURL + path, { cache: 'no-store' });
 
     if (!res.ok) {
       // throw new Error('Failed to fetch data');
@@ -24,8 +27,13 @@ export class api {
   }
 
   static async getCollaborator(slug: string): Promise<Collaborator> {
+    const baseURL =
+      process.env.NODE_ENV === 'production'
+        ? process.env.STRAPI_URL
+        : 'http://127.0.0.1:1337/api';
+
     const path = `/collaborators/${slug}`;
-    const res = await fetch(this.url + path, { cache: 'no-store' });
+    const res = await fetch(baseURL + path, { cache: 'no-store' });
 
     if (!res.ok) {
       // throw new Error('Failed to fetch collaborator');
@@ -37,8 +45,13 @@ export class api {
   }
 
   static async getPostsByCollaborator(slug: string): Promise<Post[]> {
+    const baseURL =
+      process.env.NODE_ENV === 'production'
+        ? process.env.STRAPI_URL
+        : 'http://127.0.0.1:1337/api';
+
     const path = `/posts?filters[collaborators][slug][$eq]=${slug}&fields[0]=message&fields[1]=date&fields[2]=embed`;
-    const res = await fetch(this.url + path, { cache: 'no-store' });
+    const res = await fetch(baseURL + path, { cache: 'no-store' });
 
     if (!res.ok) {
       // throw new Error('Failed to fetch posts');
