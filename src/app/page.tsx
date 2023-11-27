@@ -2,14 +2,14 @@ import Link from 'next/link';
 import { api } from './utils/api';
 import createApolloClient from './utils/apollo-client';
 import { gql } from '@apollo/client';
+import Image from 'next/image';
 
 export default function Home() {
   return (
     <>
       <Hero />
-      {/* <Image /> */}
       {/* <Collaborators /> */}
-      {/* <About /> */}
+      <About />
     </>
   );
 }
@@ -33,39 +33,30 @@ async function Collaborators() {
   );
 }
 
-function Image() {
-  return (
-    <article>
-      <img
-        src="https://source.unsplash.com/random"
-        alt="random image from unsplash"
-      />
-    </article>
-  );
-}
+async function About() {
+  async function getData() {
+    const client = createApolloClient();
+    const { data } = await client.query({
+      query: gql`
+        query AboutSection {
+          aboutSection {
+            title
+            body
+            ctaText
+          }
+        }
+      `,
+    });
 
-function About() {
+    return data;
+  }
+
+  const { aboutSection } = await getData();
+
   return (
     <section id="about">
-      <h2>About Sophia</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur, adipiscingelit, sed do eiusmod.
-        Lorem ipsum dolor sit amet, consectetur, adipiscingelit, sed do eiusmod.
-      </p>
-
-      <p>
-        Lorem ipsum dolor sit amet, consectetur, adipiscingelit, sed do eiusmod.
-        Lorem ipsum dolor sit amet, consectetur, adipiscingelit, sed do eiusmod.
-      </p>
-      <iframe
-        width="360"
-        height="215"
-        src="https://www.youtube.com/embed/IqGzwTAvosI?si=och67EXkhEEFfbvV"
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-      ></iframe>
+      <h2>{aboutSection.title}</h2>
+      <p>{aboutSection.body}</p>
     </section>
   );
 }
@@ -75,11 +66,14 @@ async function Hero() {
     const client = createApolloClient();
     const { data } = await client.query({
       query: gql`
-        query {
+        query HeroSection {
           heroSection {
             title
             body
             ctaText
+            image {
+              url
+            }
           }
         }
       `,
@@ -100,6 +94,12 @@ async function Hero() {
         <Link className="outline" role="button" href="#about">
           About Sophia
         </Link>
+        <Image
+          src={heroSection.image.url}
+          width={360}
+          height={360}
+          alt={heroSection.image.alt}
+        />
       </div>
     </>
   );
