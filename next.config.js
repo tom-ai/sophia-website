@@ -9,6 +9,13 @@ const nextConfig = {
       },
     ];
   },
+  images: {
+    remotePatterns: [
+      {
+        hostname: 'www.datocms-assets.com',
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;

@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} container `}>
         <Nav />
-        <main>{children}</main>
+        {children}
         <Footer />
       </body>
     </html>
@@ -28,17 +28,25 @@ export default function RootLayout({
 
 function Nav() {
   return (
-    <header>
-      <nav>
-        <Link href={'/'}>
-          <h1>
-            Sophia Dignam
-            <br />
-            <small>Session Musician</small>
-          </h1>
-        </Link>
-      </nav>
-    </header>
+    <nav>
+      <ul>
+        <li>
+          <Link href={'/'}>
+            <h1>Sophia Dignam</h1>
+          </Link>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <Link href={'latest-work'}>Latest work</Link>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/sophiayadig/" target="_blank">
+            Instagram
+          </a>
+        </li>
+      </ul>
+    </nav>
   );
 }
 
@@ -46,6 +54,34 @@ function Footer() {
   return (
     <footer>
       <hr />
+      <aside className="grid">
+        <address>
+          <p>
+            <strong>Sophia Dignam</strong>
+          </p>
+          <a href="mailto:contact@sophiadignam.co.uk">
+            contact@sophiadignam.co.uk
+          </a>
+          <br />
+          <a href="https://www.instagram.com/sophiayadig/" target="_blank">
+            Instagram
+          </a>
+        </address>
+        <nav>
+          <ul>
+            <li></li>
+          </ul>
+          <ul>
+            <li>
+              <Link href={'/'}>Home</Link>
+            </li>
+            <li>
+              <Link href={'latest-work'}>Latest Work</Link>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+<hr />
       <p>
         <small>I hope you enjoyed my website! Built by Tom ❤️</small>
       </p>
