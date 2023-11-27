@@ -1,5 +1,4 @@
 import { api } from '@/app/utils/api';
-import TextBlock from '@/app/components/TextBlock';
 import Iframe from 'react-iframe';
 import Link from 'next/link';
 
@@ -25,7 +24,7 @@ export default async function Collaborator({
       {collaborator.attributes.description && (
         <section>
           <h3>About</h3>
-          <TextBlock content={collaborator.attributes.description} />
+          {/* <TextBlock content={collaborator.attributes.description} /> */}
         </section>
       )}
       <section>
