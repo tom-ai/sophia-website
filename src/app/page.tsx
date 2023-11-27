@@ -81,7 +81,7 @@ async function Hero() {
         </hgroup>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <p>
-            <Link href="" role="button">
+            <Link href="latest-work" role="button">
               {heroSection.ctaText}
             </Link>
           </p>

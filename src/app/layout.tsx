@@ -53,6 +53,7 @@ function Nav() {
 function Footer() {
   return (
     <footer>
+      <hr />
       <aside className="grid">
         <address>
           <p>
