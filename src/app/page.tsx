@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { api } from './utils/api';
 import createApolloClient from './utils/apollo-client';
 import { gql } from '@apollo/client';
 import Image from 'next/image';
@@ -13,37 +12,6 @@ export default function Home() {
         <About />
       </main>
     </>
-  );
-}
-
-async function Collaborators() {
-  async function getData() {
-    const client = createApolloClient();
-    const { data } = await client.query({
-      query: gql`
-        query AllCollaborators {
-          allCollaborators {
-            id
-            name
-            slug
-          }
-        }
-      `,
-    });
-    return data;
-  }
-
-  const { allCollaborators } = await getData();
-  return (
-    <section id="collaborators">
-      <ul>
-        {allCollaborators.map((collaborator: any) => (
-          <li key={collaborator.id}>
-            <p>{collaborator.name}</p>
-          </li>
-        ))}
-      </ul>
-    </section>
   );
 }
 
@@ -67,7 +35,6 @@ async function Hero() {
     });
     return data;
   }
-
   const { heroSection } = await getData();
 
   return (
@@ -103,6 +70,37 @@ async function Hero() {
   );
 }
 
+async function Collaborators() {
+  async function getData() {
+    const client = createApolloClient();
+    const { data } = await client.query({
+      query: gql`
+        query AllCollaborators {
+          allCollaborators {
+            id
+            name
+            slug
+          }
+        }
+      `,
+    });
+    return data;
+  }
+  const { allCollaborators } = await getData();
+
+  return (
+    <section id="collaborators">
+      <ul>
+        {allCollaborators.map((collaborator: any) => (
+          <li key={collaborator.id}>
+            <p>{collaborator.name}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
 async function About() {
   async function getData() {
     const client = createApolloClient();
@@ -122,7 +120,6 @@ async function About() {
         }
       `,
     });
-
     return data;
   }
 
