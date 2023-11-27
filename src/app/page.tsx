@@ -64,6 +64,7 @@ async function Hero() {
           width={360}
           height={360}
           alt={heroSection.image.alt}
+          priority
         />
         <figcaption>{heroSection.image.title}</figcaption>
       </figure>
