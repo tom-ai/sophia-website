@@ -17,30 +17,29 @@ export default function Home() {
 }
 
 async function Collaborators() {
-  const collaborators = [
-    { name: 'James Blake', slug: 'james-blake' },
-    { name: 'Outlook Orchestra', slug: 'outlook-orchestra' },
-    { name: 'Floating Points', slug: 'floating-points' },
-    { name: 'Bonobo', slug: 'bonobo' },
-    { name: 'Emika', slug: 'emika' },
-    { name: 'Submotion Orchestra', slug: 'submotion-orchestra' },
-    { name: 'Maribou State', slug: 'maribou-state' },
-    { name: 'Nitin Sawhney', slug: 'nitin-sawhney' },
-    { name: 'Portico Quartet', slug: 'portico-quartet' },
-    { name: 'Anushka', slug: 'anushka' },
-    { name: 'Cinematic Orchestra', slug: 'cinematic-orchestra' },
-    { name: 'Fatima Yamaha', slug: 'fatima-yamaha' },
-    { name: 'Jon Hopkins', slug: 'jon-hopkins' },
-    { name: 'Hidden Orchestra', slug: 'hidden-orchestra' },
-    { name: 'Jamie xx', slug: 'jamie-xx' },
-  ];
+  async function getData() {
+    const client = createApolloClient();
+    const { data } = await client.query({
+      query: gql`
+        query AllCollaborators {
+          allCollaborators {
+            id
+            name
+            slug
+          }
+        }
+      `,
+    });
+    return data;
+  }
 
+  const { allCollaborators } = await getData();
   return (
     <section id="collaborators">
       <ul>
-        {collaborators.map((collaborator, i) => (
-          <li key={i}>
-            <Link href={`latestwork/${collaborator.slug}`}>
+        {allCollaborators.map((collaborator: any) => (
+          <li key={collaborator.id}>
+            <Link href={`latest-work/${collaborator.slug}`}>
               {collaborator.name}
             </Link>
           </li>
@@ -78,9 +77,9 @@ async function Hero() {
       <header>
         <hgroup>
           <h2>{heroSection.title}</h2>
-          <h3>{heroSection.body}</h3>
+          <p>{heroSection.body}</p>
         </hgroup>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
           <p>
             <Link href="" role="button">
               {heroSection.ctaText}
@@ -93,7 +92,7 @@ async function Hero() {
           </p>
         </div>
       </header>
-      <figure>
+      <figure dir="rtl">
         <Image
           src={heroSection.image.url}
           width={360}
@@ -116,6 +115,11 @@ async function About() {
             title
             body
             ctaText
+            image {
+              url
+              alt
+              title
+            }
           }
         }
       `,
@@ -127,9 +131,26 @@ async function About() {
   const { aboutSection } = await getData();
 
   return (
-    <section id="about">
-      <h2>{aboutSection.title}</h2>
-      <p>{aboutSection.body}</p>
+    <section id="about" className="grid">
+      <figure>
+        <Image
+          src={aboutSection.image.url}
+          width={360}
+          height={360}
+          alt={aboutSection.image.alt}
+        />
+        <figcaption>{aboutSection.image.title}</figcaption>
+      </figure>
+      <div>
+        <hgroup dir="rtl">
+          <h3>{aboutSection.title}</h3>
+          <p>Violin, viola and electric violinist</p>
+        </hgroup>
+        <p>{aboutSection.body}</p>
+        <Link href={'latest-work'} role="button">
+          Latest Work
+        </Link>
+      </div>
     </section>
   );
 }

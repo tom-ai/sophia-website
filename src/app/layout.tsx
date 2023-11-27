@@ -38,7 +38,7 @@ function Nav() {
       </ul>
       <ul>
         <li>
-          <Link href={'latestwork'}>Latest work</Link>
+          <Link href={'latest-work'}>Latest work</Link>
         </li>
         <li>
           <a href="https://www.instagram.com/sophiayadig/" target="_blank">
@@ -75,7 +75,7 @@ function Footer() {
               <Link href={'/'}>Home</Link>
             </li>
             <li>
-              <Link href={'latestwork'}>Latest Work</Link>
+              <Link href={'latest-work'}>Latest Work</Link>
             </li>
           </ul>
         </nav>
