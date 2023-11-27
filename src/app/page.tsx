@@ -39,9 +39,7 @@ async function Collaborators() {
       <ul>
         {allCollaborators.map((collaborator: any) => (
           <li key={collaborator.id}>
-            <Link href={`latest-work/${collaborator.slug}`}>
-              {collaborator.name}
-            </Link>
+            <p>{collaborator.name}</p>
           </li>
         ))}
       </ul>
