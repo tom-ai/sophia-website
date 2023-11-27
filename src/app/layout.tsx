@@ -31,11 +31,7 @@ function Nav() {
     <header>
       <nav>
         <Link href={'/'}>
-          <h1>
-            Sophia Dignam
-            <br />
-            <small>Session Musician</small>
-          </h1>
+          <h1>Sophia Dignam</h1>
         </Link>
       </nav>
     </header>

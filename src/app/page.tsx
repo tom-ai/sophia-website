@@ -73,7 +73,6 @@ function About() {
 async function Hero() {
   async function getData() {
     const client = createApolloClient();
-
     const { data } = await client.query({
       query: gql`
         query {
@@ -85,7 +84,6 @@ async function Hero() {
         }
       `,
     });
-
     return data;
   }
 
