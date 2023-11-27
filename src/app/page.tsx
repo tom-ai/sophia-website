@@ -1,13 +1,15 @@
 import Link from 'next/link';
 import { api } from './utils/api';
+import createApolloClient from './utils/apollo-client';
+import { gql } from '@apollo/client';
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Image />
-      <Collaborators />
-      <About />
+      {/* <Image /> */}
+      {/* <Collaborators /> */}
+      {/* <About /> */}
     </>
   );
 }
@@ -68,16 +70,37 @@ function About() {
   );
 }
 
-function Hero() {
+async function Hero() {
+  async function getData() {
+    const client = createApolloClient();
+
+    const { data } = await client.query({
+      query: gql`
+        query {
+          heroSection {
+            title
+            body
+            ctaText
+          }
+        }
+      `,
+    });
+
+    return data;
+  }
+
+  const { heroSection } = await getData();
+
   return (
     <>
-      <p>The most awesome violist in the world</p>
+      <h2>{heroSection.title}</h2>
+      <p>{heroSection.body}</p>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-        <Link role="button" href="#about">
-          About Sophia
+        <Link href="" role="button">
+          {heroSection.ctaText}
         </Link>
-        <Link className="outline" role="button" href="https://instagram.com/">
-          Follow on Instagram
+        <Link className="outline" role="button" href="#about">
+          About Sophia
         </Link>
       </div>
     </>
