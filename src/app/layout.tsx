@@ -45,6 +45,9 @@ function Nav() {
             Instagram
           </a>
         </li>
+        <li>
+          <a href="www.facebook.com">Facebook</a>
+        </li>
       </ul>
     </nav>
   );
