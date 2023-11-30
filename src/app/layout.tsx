@@ -81,7 +81,7 @@ function Footer() {
           </ul>
         </nav>
       </aside>
-<hr />
+      <hr />
       <p>
         <small>I hope you enjoyed my website! Built by Tom ❤️</small>
       </p>

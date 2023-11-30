@@ -48,12 +48,16 @@ export default async function LatestWork() {
                   </small>
                 </p>
               </header>
-              <blockquote>{post.message}</blockquote>
+              <blockquote>
+                <strong>{post.message}</strong>
+              </blockquote>
 
               <br />
-              <a role="button" href={post.link} target="_blank">
-                Watch/Listen
-              </a>
+              <footer>
+                <a role="button" href={post.link} target="_blank">
+                  Watch/Listen
+                </a>
+              </footer>
             </article>
           ))}
         </div>
