@@ -1,6 +1,7 @@
 import { gql } from '@apollo/client';
 import createApolloClient from '@/app/utils/apollo-client';
 import Post, { PostProps } from '../components/Post';
+import Link from 'next/link';
 
 export default async function LatestWork({
   params,
@@ -20,6 +21,7 @@ export default async function LatestWork({
             collaborators {
               id
               name
+              slug
             }
           }
         }
@@ -38,13 +40,13 @@ export default async function LatestWork({
           <article key={post.id}>
             <header>
               <time>{post.date}</time>
-              <p>
-                <small>
-                  {post.collaborators.map(
-                    (collaborator: any) => collaborator.name
-                  )}
-                </small>
-              </p>
+              <div>
+                {post.collaborators.map((collaborator: any) => (
+                  <Link href={`/latest-work/${collaborator.slug}`}>
+                    <small>{collaborator.name}</small>
+                  </Link>
+                ))}
+              </div>
             </header>
             <blockquote>
               <strong>{post.message}</strong>
