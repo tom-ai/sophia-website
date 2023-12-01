@@ -72,7 +72,10 @@ export default async function LatestWork({
               <time>{post.date}</time>
               <div>
                 {post.collaborators.map((collaborator: any) => (
-                  <Link href={`/latest-work/${collaborator.slug}`}>
+                  <Link
+                    href={`/latest-work/${collaborator.slug}`}
+                    key={collaborator.id}
+                  >
                     <small>{collaborator.name}</small>
                   </Link>
                 ))}
