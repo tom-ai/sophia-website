@@ -29,6 +29,7 @@ async function Hero() {
             image {
               url
               title
+              alt
             }
           }
         }
@@ -82,8 +83,8 @@ async function About() {
             ctaText
             image {
               url
-              alt
               title
+              alt
             }
           }
         }
