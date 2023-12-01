@@ -39,25 +39,23 @@ async function Hero() {
   const { heroSection } = await getData();
 
   return (
-    <>
-      <header>
-        <hgroup>
-          <h2>{heroSection.title}</h2>
-          <p>{heroSection.body}</p>
-        </hgroup>
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          <p>
-            <Link href="latest-work" role="button">
-              {heroSection.ctaText}
-            </Link>
-          </p>
-          <p>
-            <Link className="outline" role="button" href="#about">
-              About Sophia
-            </Link>
-          </p>
-        </div>
-      </header>
+    <header>
+      <hgroup>
+        <h2>{heroSection.title}</h2>
+        <p>{heroSection.body}</p>
+      </hgroup>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <p>
+          <Link href="latest-work" role="button">
+            {heroSection.ctaText}
+          </Link>
+        </p>
+        <p>
+          <Link className="outline" role="button" href="#about">
+            About Sophia
+          </Link>
+        </p>
+      </div>
       <figure dir="rtl">
         <Image
           src={heroSection.image.url}
@@ -68,7 +66,7 @@ async function Hero() {
         />
         <figcaption>{heroSection.image.title}</figcaption>
       </figure>
-    </>
+    </header>
   );
 }
 

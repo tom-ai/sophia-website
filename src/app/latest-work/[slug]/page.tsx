@@ -3,6 +3,27 @@ import createApolloClient from '@/app/utils/apollo-client';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 
+export async function generateStaticParams() {
+  async function getData() {
+    const client = createApolloClient();
+    const { data } = await client.query({
+      query: gql`
+        query AllCollaborators {
+          allCollaborators {
+            slug
+          }
+        }
+      `,
+    });
+
+    return data;
+  }
+
+  const { allCollaborators } = await getData();
+
+  return allCollaborators.map((collaborator: any) => collaborator.slug);
+}
+
 export default async function LatestWork({
   params,
 }: {
