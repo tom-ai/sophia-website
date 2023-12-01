@@ -1,22 +1,35 @@
-'use client';
-import { useEffect, useState } from 'react';
-import fetchCollaborators from '../utils/fetchCollaborators';
+import Link from 'next/link';
+import createApolloClient from '../utils/apollo-client';
+import { gql } from '@apollo/client';
 
-export function Collaborators() {
-  const [allCollaborators, setAllCollaborators] = useState([]);
+export async function Collaborators() {
+  async function getData() {
+    const client = createApolloClient();
+    const { data } = await client.query({
+      query: gql`
+        query AllCollaborators {
+          allCollaborators {
+            id
+            name
+            slug
+          }
+        }
+      `,
+    });
 
-  useEffect(() => {
-    fetchCollaborators().then(({ allCollaborators }) =>
-      setAllCollaborators(allCollaborators)
-    );
-  }, []);
+    return data;
+  }
+
+  const { allCollaborators } = await getData();
 
   return (
     <section id="collaborators">
       <ul>
         {allCollaborators.map((collaborator: any) => (
           <li key={collaborator.id}>
-            <p>{collaborator.name}</p>
+            <Link href={`latest-work/${collaborator.slug}`}>
+              {collaborator.name}
+            </Link>
           </li>
         ))}
       </ul>
