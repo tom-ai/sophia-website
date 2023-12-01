@@ -1,6 +1,5 @@
 import { gql } from '@apollo/client';
 import createApolloClient from '@/app/utils/apollo-client';
-import Post, { PostProps } from '../components/Post';
 import Link from 'next/link';
 
 export default async function LatestWork({
@@ -36,7 +35,7 @@ export default async function LatestWork({
   return (
     <section>
       <div className="grid">
-        {allPosts.map((post: PostProps) => (
+        {allPosts.map((post: any) => (
           <article key={post.id}>
             <header>
               <time>{post.date}</time>
