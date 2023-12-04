@@ -19,7 +19,7 @@ export default function Button({
           : "bg-harmonyPalette-blue-100 text-harmonyPalette-blue-600"
       } self-start rounded-md px-6 py-3 font-medium `}
       href={href}
-      rel="me noreferrer"
+      scroll
     >
       {children}
     </Link>

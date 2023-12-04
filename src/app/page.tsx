@@ -109,9 +109,7 @@ async function About() {
           <p>Violin, viola and electric violinist</p>
         </hgroup>
         <p className="mb-8">{aboutSection.body}</p>
-        <Link href={"latest-work"} role="button">
-          Latest Work
-        </Link>
+        <Button href="latest-work">Latest Work</Button>
       </div>
     </section>
   );
