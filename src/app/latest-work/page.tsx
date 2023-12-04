@@ -45,20 +45,22 @@ export default async function LatestWork({
   return (
     <section className="flex flex-col gap-3">
       {allPosts.map((post: Post) => (
-        <Card isPressable>
-          <CardHeader>
-            <time>{post.date}</time>
-          </CardHeader>
-          <Divider />
-          <CardBody>
-            <blockquote>{post.message}</blockquote>
-          </CardBody>
-          <Divider />
-          <CardFooter>
-            <Link isExternal showAnchorIcon href={post.link}>
-              Visit content on YouTube.
-            </Link>
-          </CardFooter>
+        <Card>
+          <article>
+            <CardHeader>
+              <time>{post.date}</time>
+            </CardHeader>
+            <Divider />
+            <CardBody>
+              <blockquote>{post.message}</blockquote>
+            </CardBody>
+            <Divider />
+            <CardFooter>
+              <Link isExternal showAnchorIcon href={post.link}>
+                Visit content on YouTube.
+              </Link>
+            </CardFooter>
+          </article>
         </Card>
         // <Card post={post} key={post.id} />
       ))}

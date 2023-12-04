@@ -1,6 +1,6 @@
-import Link from "next/link";
 import createApolloClient from "../utils/apollo-client";
 import { gql } from "@apollo/client";
+import { Button, Link } from "@nextui-org/react";
 
 export async function Collaborators() {
   async function getData() {
@@ -24,12 +24,13 @@ export async function Collaborators() {
 
   return (
     <section id="collaborators" className="py-12 text-center">
-      <ul className="flex flex-wrap justify-center gap-4 text-xl font-bold">
+      <ul className=" flex flex-wrap justify-center font-bold">
         {allCollaborators.map((collaborator: any) => (
           <li key={collaborator.id}>
             <Link
+              color="secondary"
+              isBlock
               href={`latest-work/${collaborator.slug}`}
-              className="whitespace-nowrap hover:underline"
             >
               {collaborator.name}
             </Link>

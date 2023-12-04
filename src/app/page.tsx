@@ -1,9 +1,9 @@
-import Link from "next/link";
+// import Link from "next/link";
 import createApolloClient from "./utils/apollo-client";
 import { gql } from "@apollo/client";
 import Image from "next/image";
 import { Collaborators } from "./components/Collaborators";
-import Button from "./components/Button";
+import { Button, Link } from "@nextui-org/react";
 
 export default function Home() {
   return (
@@ -47,10 +47,18 @@ async function Hero() {
         <p>{heroSection.body}</p>
       </hgroup>
       <div className="mb-8 flex flex-col gap-3">
+        <Button href="latest-work" as={Link} color="primary">
+          {heroSection.ctaText}
+        </Button>
+        <Button href="#about" as={Link} color="secondary">
+          About Sophia
+        </Button>
+
+        {/*         
         <Button href="latest-work">{heroSection.ctaText}</Button>
         <Button href="#about" variant="secondary">
           About Sophia
-        </Button>
+        </Button> */}
       </div>
       <div className="mx-auto">
         <figure>
@@ -109,7 +117,9 @@ async function About() {
           <p>Violin, viola and electric violinist</p>
         </hgroup>
         <p className="mb-8">{aboutSection.body}</p>
-        <Button href="latest-work">Latest Work</Button>
+        <Button href="latest-work" as={Link} color="primary">
+          Latest Work
+        </Button>
       </div>
     </section>
   );
