@@ -11,6 +11,7 @@ import {
   NavbarItem,
   Link,
   Button,
+  Divider,
 } from "@nextui-org/react";
 
 // const inter = Inter({ subsets: ["latin"] });
@@ -32,7 +33,7 @@ export default function RootLayout({
         <Providers>
           <Navbar shouldHideOnScroll>
             <NavbarBrand>
-              <Link href={"/"}>
+              <Link href={"/"} color="foreground">
                 <h1 className="font-medium tracking-tighter">Sophia Dignam</h1>
               </Link>
             </NavbarBrand>
@@ -79,7 +80,7 @@ function Nav() {
 function Footer() {
   return (
     <footer>
-      <hr />
+      <Divider />
       <address className="py-8">
         <p>
           <strong>Sophia Dignam</strong>
@@ -98,14 +99,18 @@ function Footer() {
           </li>
         </ul>
       </address>
-      <hr />
+      <Divider />
       <nav className="py-8">
         <ul>
           <li>
-            <Link href={"/"}>Home</Link>
+            <Link href={"/"} color="foreground">
+              Home
+            </Link>
           </li>
           <li>
-            <Link href={"/latest-work"}>Latest Work</Link>
+            <Link href={"/latest-work"} color="foreground">
+              Latest Work
+            </Link>
           </li>
         </ul>
       </nav>
