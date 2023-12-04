@@ -3,6 +3,7 @@ import createApolloClient from "./utils/apollo-client";
 import { gql } from "@apollo/client";
 import Image from "next/image";
 import { Collaborators } from "./components/Collaborators";
+import Button from "./components/Button";
 
 export default function Home() {
   return (
@@ -42,19 +43,13 @@ async function Hero() {
   return (
     <header className="py-12">
       <hgroup className="mb-8">
-        <h2 className="text-3xl font-bold">{heroSection.title}</h2>
+        <h2 className="mb-3 text-3xl font-bold">{heroSection.title}</h2>
         <p>{heroSection.body}</p>
       </hgroup>
       <div className="mb-8 flex flex-col gap-3">
+        <Button href="latest-work">{heroSection.ctaText}</Button>
         <p>
-          <Link role="button" href="latest-work">
-            {heroSection.ctaText}
-          </Link>
-        </p>
-        <p>
-          <Link role="button" href="#about">
-            About Sophia
-          </Link>
+          <Link href="#about">About Sophia</Link>
         </p>
       </div>
       <div className="mx-auto">

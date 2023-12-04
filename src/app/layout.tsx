@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
+import { Syne } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
+const syne = Syne({ subsets: ["latin"], weight: ["400", "800"] });
 
 export const metadata: Metadata = {
   title: "Session Musician SD",
@@ -17,7 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`container mx-auto p-4`}>
+      <body
+        className={`${syne.className} text-harmonyPalette-slate-800 container mx-auto p-4`}
+      >
         <Nav />
         {children}
         <Footer />
@@ -28,7 +32,7 @@ export default function RootLayout({
 
 function Nav() {
   return (
-    <nav className="flex justify-between py-8">
+    <nav className="flex justify-between py-8 ">
       <ul>
         <li>
           <Link href={"/"}>
