@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Syne } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import { Providers } from "./providers";
 
 // const inter = Inter({ subsets: ["latin"] });
 const syne = Syne({ subsets: ["latin"], weight: ["400", "500", "800"] });
@@ -18,13 +19,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body
-        className={`${syne.className} text-harmonyPalette-slate-800 container mx-auto p-4`}
-      >
-        <Nav />
-        {children}
-        <Footer />
+    <html lang="en" className="light">
+      <body className={`${syne.className} container mx-auto p-4`}>
+        <Providers>
+          <Nav />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
