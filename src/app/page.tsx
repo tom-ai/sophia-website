@@ -56,18 +56,21 @@ async function Hero() {
           About Sophia
         </Button>
       </div>
-      <div className="mx-auto">
-        <figure>
-          <Image
-            src={heroSection.image.url}
-            width={360}
-            height={360}
-            alt={heroSection.image.alt}
-            priority
-          />
-          <figcaption>{heroSection.image.title}</figcaption>
-        </figure>
-      </div>
+
+      <figure className="relative h-96">
+        <Image
+          src={heroSection.image.url}
+          objectFit="cover"
+          fill
+          sizes="(min-width: 808px) 50vw, 100vw"
+          alt={heroSection.image.alt}
+          priority
+        />
+
+        <figcaption className="text-right">
+          {heroSection.image.title}
+        </figcaption>
+      </figure>
     </header>
   );
 }
@@ -98,15 +101,17 @@ async function About() {
 
   return (
     <section id="about" className="py-12">
-      <figure>
+      <figure className="relative h-96">
         <Image
           src={aboutSection.image.url}
-          width={360}
-          height={360}
+          fill
+          sizes="(min-width: 808px) 50vw, 100vw"
+          objectFit="cover"
           alt={aboutSection.image.alt}
         />
         <figcaption>{aboutSection.image.title}</figcaption>
       </figure>
+
       <div className="pt-8">
         <hgroup className="mb-8 text-right">
           <h3 className="text-2xl font-bold">{aboutSection.title}</h3>
