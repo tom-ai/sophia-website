@@ -23,14 +23,15 @@ export async function Collaborators() {
   const { allCollaborators } = await getData();
 
   return (
-    <section id="collaborators" className="py-12 text-center">
-      <ul className=" flex flex-wrap justify-center font-bold">
+    <section id="collaborators" className="flex py-12">
+      <ul className="flex flex-wrap justify-center text-center font-bold">
         {allCollaborators.map((collaborator: any) => (
           <li key={collaborator.id}>
             <Link
               color="secondary"
               isBlock
               href={`latest-work/${collaborator.slug}`}
+              size="lg"
             >
               {collaborator.name}
             </Link>

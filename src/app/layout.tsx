@@ -84,6 +84,7 @@ function Footer() {
         <p>
           <strong>Sophia Dignam</strong>
         </p>
+        <p>Viola and Violin Session Musician</p>
         <ul>
           <li>
             <a href="mailto:contact@sophiadignam.co.uk">
