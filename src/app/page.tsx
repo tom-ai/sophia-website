@@ -1,8 +1,8 @@
-import Link from 'next/link';
-import createApolloClient from './utils/apollo-client';
-import { gql } from '@apollo/client';
-import Image from 'next/image';
-import { Collaborators } from './components/Collaborators';
+import Link from "next/link";
+import createApolloClient from "./utils/apollo-client";
+import { gql } from "@apollo/client";
+import Image from "next/image";
+import { Collaborators } from "./components/Collaborators";
 
 export default function Home() {
   return (
@@ -40,33 +40,35 @@ async function Hero() {
   const { heroSection } = await getData();
 
   return (
-    <header>
-      <hgroup>
-        <h2>{heroSection.title}</h2>
+    <header className="py-12">
+      <hgroup className="mb-8">
+        <h2 className="text-3xl font-bold">{heroSection.title}</h2>
         <p>{heroSection.body}</p>
       </hgroup>
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <div className="mb-8 flex flex-col gap-3">
         <p>
-          <Link href="latest-work" role="button">
+          <Link role="button" href="latest-work">
             {heroSection.ctaText}
           </Link>
         </p>
         <p>
-          <Link className="outline" role="button" href="#about">
+          <Link role="button" href="#about">
             About Sophia
           </Link>
         </p>
       </div>
-      <figure dir="rtl">
-        <Image
-          src={heroSection.image.url}
-          width={360}
-          height={360}
-          alt={heroSection.image.alt}
-          priority
-        />
-        <figcaption>{heroSection.image.title}</figcaption>
-      </figure>
+      <div className="mx-auto">
+        <figure>
+          <Image
+            src={heroSection.image.url}
+            width={360}
+            height={360}
+            alt={heroSection.image.alt}
+            priority
+          />
+          <figcaption>{heroSection.image.title}</figcaption>
+        </figure>
+      </div>
     </header>
   );
 }
@@ -96,7 +98,7 @@ async function About() {
   const { aboutSection } = await getData();
 
   return (
-    <section id="about" className="grid">
+    <section id="about" className="py-12">
       <figure>
         <Image
           src={aboutSection.image.url}
@@ -106,13 +108,13 @@ async function About() {
         />
         <figcaption>{aboutSection.image.title}</figcaption>
       </figure>
-      <div>
-        <hgroup dir="rtl">
-          <h3>{aboutSection.title}</h3>
+      <div className="pt-8">
+        <hgroup className="mb-8 text-right">
+          <h3 className="text-2xl font-bold">{aboutSection.title}</h3>
           <p>Violin, viola and electric violinist</p>
         </hgroup>
-        <p>{aboutSection.body}</p>
-        <Link href={'latest-work'} role="button">
+        <p className="mb-8">{aboutSection.body}</p>
+        <Link href={"latest-work"} role="button">
           Latest Work
         </Link>
       </div>

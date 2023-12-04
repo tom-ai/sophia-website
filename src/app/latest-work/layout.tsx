@@ -9,9 +9,9 @@ export default function LatestWorkLayout({
 }) {
   return (
     <>
-      <header>
-        <hgroup>
-          <h2>Latest Work</h2>
+      <header className="py-12">
+        <hgroup className="mb-8">
+          <h2 className="text-3xl font-bold">Latest Work</h2>
           <p>Bands, session recordings and studio</p>
         </hgroup>
       </header>

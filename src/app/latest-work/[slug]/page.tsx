@@ -1,7 +1,7 @@
-import { gql } from '@apollo/client';
-import createApolloClient from '@/app/utils/apollo-client';
-import { notFound } from 'next/navigation';
-import Link from 'next/link';
+import { gql } from "@apollo/client";
+import createApolloClient from "@/app/utils/apollo-client";
+import { notFound } from "next/navigation";
+import Link from "next/link";
 
 export async function generateStaticParams() {
   async function getData() {
@@ -64,7 +64,7 @@ export default async function LatestWork({
 
   return (
     <section>
-      <h3>{collaborator.name}</h3>
+      <h3 className="text-2xl font-bold">{collaborator.name}</h3>
       <div className="grid">
         {collaborator.posts.map((post: any) => (
           <article key={post.id}>
