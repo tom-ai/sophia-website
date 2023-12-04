@@ -43,7 +43,9 @@ async function Hero() {
   return (
     <header className="py-12">
       <hgroup className="mb-8">
-        <h2 className="mb-3 text-3xl font-bold">{heroSection.title}</h2>
+        <h2 className="mb-3 max-w-md text-3xl font-bold">
+          {heroSection.title}
+        </h2>
         <p>{heroSection.body}</p>
       </hgroup>
       <div className="mb-8 flex flex-col gap-3">
@@ -53,12 +55,6 @@ async function Hero() {
         <Button href="#about" as={Link} color="secondary">
           About Sophia
         </Button>
-
-        {/*         
-        <Button href="latest-work">{heroSection.ctaText}</Button>
-        <Button href="#about" variant="secondary">
-          About Sophia
-        </Button> */}
       </div>
       <div className="mx-auto">
         <figure>
