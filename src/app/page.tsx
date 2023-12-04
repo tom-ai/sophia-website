@@ -48,9 +48,9 @@ async function Hero() {
       </hgroup>
       <div className="mb-8 flex flex-col gap-3">
         <Button href="latest-work">{heroSection.ctaText}</Button>
-        <p>
-          <Link href="#about">About Sophia</Link>
-        </p>
+        <Button href="#about" variant="secondary">
+          About Sophia
+        </Button>
       </div>
       <div className="mx-auto">
         <figure>

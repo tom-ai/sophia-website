@@ -5,7 +5,7 @@ import "./globals.css";
 import Link from "next/link";
 
 // const inter = Inter({ subsets: ["latin"] });
-const syne = Syne({ subsets: ["latin"], weight: ["400", "800"] });
+const syne = Syne({ subsets: ["latin"], weight: ["400", "500", "800"] });
 
 export const metadata: Metadata = {
   title: "Session Musician SD",
