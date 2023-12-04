@@ -22,12 +22,12 @@ export default function Card({ post }: CardProps) {
           </Link>
         ))}
       </header>
-      <blockquote className="font-medium">{post.message}</blockquote>
+      <blockquote className="">{post.message}</blockquote>
 
       <br />
       <footer>
         <a rel="me noreferrer" href={post.link}>
-          {post.link}
+          Watch and listen on YouTube.
         </a>
       </footer>
     </article>
