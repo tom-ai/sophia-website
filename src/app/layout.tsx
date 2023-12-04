@@ -2,8 +2,16 @@ import type { Metadata } from "next";
 // import { Inter } from "next/font/google";
 import { Syne } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
+// import Link from "next/link";
 import { Providers } from "./providers";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  Link,
+  Button,
+} from "@nextui-org/react";
 
 // const inter = Inter({ subsets: ["latin"] });
 const syne = Syne({ subsets: ["latin"], weight: ["400", "500", "800"] });
@@ -22,7 +30,25 @@ export default function RootLayout({
     <html lang="en" className="light">
       <body className={`${syne.className} container mx-auto p-4`}>
         <Providers>
-          <Nav />
+          <Navbar shouldHideOnScroll>
+            <NavbarBrand>
+              <Link href={"/"}>
+                <h1 className="font-medium tracking-tighter">Sophia Dignam</h1>
+              </Link>
+            </NavbarBrand>
+            <NavbarContent justify="end">
+              <NavbarItem>
+                <Button
+                  as={Link}
+                  color="primary"
+                  href="/latest-work"
+                  variant="flat"
+                >
+                  Latest Work
+                </Button>
+              </NavbarItem>
+            </NavbarContent>
+          </Navbar>
           {children}
           <Footer />
         </Providers>
