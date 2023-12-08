@@ -24,17 +24,19 @@ export async function Collaborators() {
 
   return (
     <section id="collaborators" className="flex py-12">
-      <ul className="flex flex-wrap justify-center text-center font-bold">
+      <ul className="flex flex-wrap justify-center gap-3">
         {allCollaborators.map((collaborator: any) => (
           <li key={collaborator.id}>
-            <Link
+            <Button
+              as={Link}
               color="secondary"
               isBlock
               href={`latest-work/${collaborator.slug}`}
               size="lg"
+              variant="flat"
             >
               {collaborator.name}
-            </Link>
+            </Button>
           </li>
         ))}
       </ul>

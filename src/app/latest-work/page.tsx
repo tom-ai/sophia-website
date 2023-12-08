@@ -13,6 +13,7 @@ import {
   Chip,
 } from "@nextui-org/react";
 import PostList from "../components/PostList";
+import PageHeader from "../components/PageHeader";
 
 export default async function LatestWork({
   params,
@@ -45,8 +46,15 @@ export default async function LatestWork({
   const { allPosts } = await getData();
 
   return (
-    <section className="flex flex-col gap-3 py-12">
-      <PostList posts={allPosts} />
-    </section>
+    <>
+      <PageHeader title="Latest Work">
+        <p>Bands, session recordings and studio</p>
+      </PageHeader>
+      <main>
+        <section className="flex flex-col gap-3 py-12">
+          <PostList posts={allPosts} />
+        </section>
+      </main>
+    </>
   );
 }
