@@ -1,4 +1,3 @@
-// import Link from "next/link";
 import createApolloClient from "./utils/apollo-client";
 import { gql } from "@apollo/client";
 import Image from "next/image";
@@ -49,7 +48,7 @@ async function Hero() {
         <p>{heroSection.body}</p>
       </hgroup>
       <div className="mb-8 flex flex-col gap-3">
-        <Button href="latest-work" as={Link} color="primary">
+        <Button href="contact" as={Link} color="primary">
           {heroSection.ctaText}
         </Button>
         <Button href="#about" as={Link} color="secondary">
@@ -118,8 +117,9 @@ async function About() {
           <p>Violin, viola and electric violinist</p>
         </hgroup>
         <p className="mb-8">{aboutSection.body}</p>
-        <Button href="latest-work" as={Link} color="primary">
-          Latest Work
+
+        <Button as={Link} href="contact" color="primary" fullWidth>
+          Contact
         </Button>
       </div>
     </section>

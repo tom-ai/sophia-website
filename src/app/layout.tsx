@@ -42,10 +42,10 @@ export default function RootLayout({
                 <Button
                   as={Link}
                   color="primary"
-                  href="/latest-work"
+                  href="/contact"
                   variant="flat"
                 >
-                  Latest Work
+                  Contact
                 </Button>
               </NavbarItem>
             </NavbarContent>
@@ -58,47 +58,11 @@ export default function RootLayout({
   );
 }
 
-function Nav() {
-  return (
-    <nav className="flex justify-between py-8 ">
-      <ul>
-        <li>
-          <Link href={"/"}>
-            <h1>Sophia Dignam</h1>
-          </Link>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <Link href={"/latest-work"}>Latest work</Link>
-        </li>
-      </ul>
-    </nav>
-  );
-}
-
 function Footer() {
   return (
     <footer>
       <Divider />
-      <address className="py-8">
-        <p>
-          <strong>Sophia Dignam</strong>
-        </p>
-        <p>Viola and Violin Session Musician</p>
-        <ul>
-          <li>
-            <a href="mailto:contact@sophiadignam.co.uk">
-              contact@sophiadignam.co.uk
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/sophiayadig/" target="_blank">
-              Instagram
-            </a>
-          </li>
-        </ul>
-      </address>
+
       <Divider />
       <nav className="py-8">
         <ul>
@@ -112,8 +76,23 @@ function Footer() {
               Latest Work
             </Link>
           </li>
+          <li>
+            <Link href={"/contact"} color="foreground">
+              Contact
+            </Link>
+          </li>
         </ul>
       </nav>
+      <address className="py-8">
+        <p>
+          <strong>Sophia Dignam</strong>
+        </p>
+        <p className="mb-3">Viola and Violin Session Musician</p>
+        <a href="https://www.instagram.com/sophiayadig/" target="_blank">
+          Follow on Instagram
+        </a>
+      </address>
+      <Divider />
       <p>
         <small>I hope you enjoyed my website! Built by Tom ❤️</small>
       </p>
