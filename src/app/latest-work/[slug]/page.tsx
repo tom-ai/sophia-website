@@ -3,8 +3,7 @@ import createApolloClient from "@/app/utils/apollo-client";
 import { notFound } from "next/navigation";
 import PostList from "@/app/components/PostList";
 import PageHeader from "@/app/components/PageHeader";
-import Link from "next/link";
-import BackButton from "@/app/components/BackButton";
+import { Button, Link, Spacer } from "@nextui-org/react";
 
 export async function generateStaticParams() {
   async function getData() {
@@ -69,19 +68,22 @@ export default async function LatestWork({
     <>
       <PageHeader title={collaborator.name}></PageHeader>
       <main>
-        <section className="flex flex-col gap-3 py-12">
-          <PostList posts={collaborator.posts} />
-          <BackButton />
+        <section className="flex flex-col gap-4 py-12">
+          {collaborator.posts.length > 0 ? (
+            <PostList posts={collaborator.posts} />
+          ) : (
+            <p>No posts yet!</p>
+          )}
+
+          <Spacer />
+          <Button as={Link} href="/">
+            Go back
+          </Button>
         </section>
       </main>
     </>
   );
 }
-
-// get params, pass it to child component
-
-// if params is null, render allPosts
-// if params is not not null, render allPostsByCollaborator
 
 type BreadcrumbProps = {
   currentName: string;
