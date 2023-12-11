@@ -3,7 +3,6 @@ import { gql } from "@apollo/client";
 import Image from "next/image";
 import { Collaborators } from "./components/Collaborators";
 import { Button, Link } from "@nextui-org/react";
-import RecentPosts from "./components/RecentPosts";
 import SectionHeader from "./components/SectionHeader";
 
 export default function Home() {
