@@ -3,8 +3,8 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/collaborators',
-        destination: '/',
+        source: "/latest-work",
+        destination: "/",
         permanent: true,
       },
     ];
@@ -12,7 +12,7 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: 'www.datocms-assets.com',
+        hostname: "www.datocms-assets.com",
       },
     ],
   },

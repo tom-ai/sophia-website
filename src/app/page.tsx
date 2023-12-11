@@ -3,6 +3,7 @@ import { gql } from "@apollo/client";
 import Image from "next/image";
 import { Collaborators } from "./components/Collaborators";
 import { Button, Link } from "@nextui-org/react";
+import SectionHeader from "./components/SectionHeader";
 
 export default function Home() {
   return (
@@ -112,10 +113,9 @@ async function About() {
       </figure>
 
       <div className="pt-8">
-        <hgroup className="mb-8 text-right">
-          <h3 className="text-2xl font-bold">{aboutSection.title}</h3>
+        <SectionHeader title={aboutSection.title} direction="right">
           <p>Violin, viola and electric violinist</p>
-        </hgroup>
+        </SectionHeader>
         <p className="mb-8">{aboutSection.body}</p>
 
         <Button as={Link} href="contact" color="primary" fullWidth>

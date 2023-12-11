@@ -72,11 +72,6 @@ function Footer() {
             </Link>
           </li>
           <li>
-            <Link href={"/latest-work"} color="foreground">
-              Latest Work
-            </Link>
-          </li>
-          <li>
             <Link href={"/contact"} color="foreground">
               Contact
             </Link>
