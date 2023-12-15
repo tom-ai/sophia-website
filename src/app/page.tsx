@@ -41,36 +41,39 @@ async function Hero() {
   const { heroSection } = await getData();
 
   return (
-    <header className="py-12">
-      <hgroup className="mb-8">
-        <h2 className="mb-3 max-w-md text-3xl font-bold">
-          {heroSection.title}
-        </h2>
-        <p>{heroSection.body}</p>
-      </hgroup>
-      <div className="mb-8 flex flex-col gap-3">
-        <Button href="contact" as={Link} color="primary">
-          {heroSection.ctaText}
-        </Button>
-        <Button href="#about" as={Link} color="secondary">
-          About Sophia
-        </Button>
+    <header className="py-12 md:grid md:h-screen md:grid-cols-2 md:grid-rows-1 md:gap-6 ">
+      <div>
+        <hgroup className="mb-8">
+          <h2 className="mb-3 max-w-md text-3xl font-bold">
+            {heroSection.title}
+          </h2>
+          <p>{heroSection.body}</p>
+        </hgroup>
+        <div className="mb-8 flex flex-col gap-3">
+          <Button href="contact" as={Link} color="primary">
+            {heroSection.ctaText}
+          </Button>
+          <Button href="#about" as={Link} color="secondary">
+            About Sophia
+          </Button>
+        </div>
       </div>
+      <div className="md:flex md:items-end md:justify-end">
+        <figure className="relative h-96 w-full md:h-4/5 md:w-4/5">
+          <Image
+            src={heroSection.image.url}
+            objectFit="cover"
+            fill
+            sizes="(min-width: 808px) 50vw, 100vw"
+            alt={heroSection.image.alt}
+            priority
+          />
 
-      <figure className="relative h-96">
-        <Image
-          src={heroSection.image.url}
-          objectFit="cover"
-          fill
-          sizes="(min-width: 808px) 50vw, 100vw"
-          alt={heroSection.image.alt}
-          priority
-        />
-
-        <figcaption className="text-right">
-          {heroSection.image.title}
-        </figcaption>
-      </figure>
+          <figcaption className="text-right">
+            {heroSection.image.title}
+          </figcaption>
+        </figure>
+      </div>
     </header>
   );
 }
