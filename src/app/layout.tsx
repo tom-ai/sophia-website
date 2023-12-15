@@ -62,38 +62,40 @@ function Footer() {
   return (
     <footer>
       <Divider />
-
+      <div className="md:flex md:justify-between">
+        <nav className="py-8">
+          <ul>
+            <li>
+              <Link href={"/"} color="foreground">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href={"/contact"} color="foreground">
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </nav>
+        <address className="order-first py-8">
+          <p>
+            <strong>Sophia Dignam</strong>
+          </p>
+          <p className="mb-3">Viola and Violin Session Musician</p>
+          <a href="https://www.instagram.com/sophiayadig/" target="_blank">
+            Follow on Instagram
+          </a>
+        </address>
+      </div>
       <Divider />
-      <nav className="py-8">
-        <ul>
-          <li>
-            <Link href={"/"} color="foreground">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link href={"/contact"} color="foreground">
-              Contact
-            </Link>
-          </li>
-        </ul>
-      </nav>
-      <address className="py-8">
+      <div className="md:flex md:justify-between">
         <p>
-          <strong>Sophia Dignam</strong>
+          <small>© Copyright 2023</small>
         </p>
-        <p className="mb-3">Viola and Violin Session Musician</p>
-        <a href="https://www.instagram.com/sophiayadig/" target="_blank">
-          Follow on Instagram
-        </a>
-      </address>
-      <Divider />
-      <p>
-        <small>I hope you enjoyed my website! Built by Tom ❤️</small>
-      </p>
-      <p>
-        <small>© Copyright 2023</small>
-      </p>
+        <p>
+          <small>I hope you enjoyed my website! Built by Tom ❤️</small>
+        </p>
+      </div>
     </footer>
   );
 }

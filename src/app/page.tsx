@@ -41,15 +41,15 @@ async function Hero() {
   const { heroSection } = await getData();
 
   return (
-    <header className="py-12 md:grid md:h-screen md:grid-cols-2 md:grid-rows-1 md:gap-6 ">
+    <header className="py-12 md:grid md:h-screen md:grid-cols-2 md:grid-rows-1 md:gap-6 2xl:h-[50vh]">
       <div>
         <hgroup className="mb-8">
-          <h2 className="mb-3 max-w-md text-3xl font-bold">
+          <h2 className="mb-3 max-w-md text-3xl font-bold md:text-4xl">
             {heroSection.title}
           </h2>
           <p>{heroSection.body}</p>
         </hgroup>
-        <div className="mb-8 flex flex-col gap-3">
+        <div className="mb-8 flex flex-col gap-3 md:items-start">
           <Button href="contact" as={Link} color="primary">
             {heroSection.ctaText}
           </Button>
@@ -58,8 +58,8 @@ async function Hero() {
           </Button>
         </div>
       </div>
-      <div className="md:flex md:items-end md:justify-end">
-        <figure className="relative h-96 w-full md:h-4/5 md:w-4/5">
+      <div className="md:flex md:items-start md:justify-center">
+        <figure className="relative h-96 w-full md:h-4/5">
           <Image
             src={heroSection.image.url}
             objectFit="cover"
@@ -103,7 +103,7 @@ async function About() {
   const { aboutSection } = await getData();
 
   return (
-    <section id="about" className="py-12">
+    <section id="about" className="py-12 md:grid md:grid-cols-2 md:gap-6">
       <figure className="relative h-96">
         <Image
           src={aboutSection.image.url}

@@ -15,7 +15,7 @@ type PostListProps = {
 
 export default function PostList({ posts }: PostListProps) {
   return posts.map((post: Post) => (
-    <Card>
+    <Card className="">
       <article>
         <CardHeader>
           <div className="flex gap-2">

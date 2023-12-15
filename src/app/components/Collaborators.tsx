@@ -36,12 +36,11 @@ export async function Collaborators() {
   const { allCollaborators, allPosts } = await getData();
 
   return (
-    <section id="portfolio" className="py-12">
-      <SectionHeader
-        title="Performing with artists and orchestras"
-        direction="center"
-      />
-      <ul className="flex flex-wrap justify-center gap-3">
+    <section id="portfolio" className="flex flex-col items-center py-12">
+      <div className="md:w-3/5">
+        <SectionHeader title="Featured Artists & Events" direction="center" />
+      </div>
+      <ul className="flex flex-wrap justify-center gap-3 md:w-4/5">
         {allCollaborators.map((collaborator: any) => (
           <li key={collaborator.id}>
             <Button
