@@ -11,8 +11,8 @@ export default function Home() {
     <>
       <Hero />
       <main>
-        {/* <Collaborators />
-        <About /> */}
+        <Collaborators />
+        <About />
       </main>
     </>
   );
@@ -35,7 +35,7 @@ async function Hero() {
 
   const { heroSection } = await performRequest({
     query: PAGE_CONTENT_QUERY,
-    revalidate: false,
+    revalidate: false, // update performRequest with types, make revalidate either false, 0 or a number
   });
 
   return (
@@ -77,28 +77,24 @@ async function Hero() {
 }
 
 async function About() {
-  async function getData() {
-    const client = createApolloClient();
-    const { data } = await client.query({
-      query: gql`
-        query AboutSection {
-          aboutSection {
-            title
-            body
-            ctaText
-            image {
-              url
-              title
-              alt
-            }
-          }
+  const PAGE_CONTENT_QUERY = `
+    query AboutSection {
+      aboutSection {
+        title
+        body
+        ctaText
+        image {
+          url
+          title
+          alt
         }
-      `,
-    });
-    return data;
-  }
+      }
+    }`;
 
-  const { aboutSection } = await getData();
+  const { aboutSection } = await performRequest({
+    query: PAGE_CONTENT_QUERY,
+    revalidate: false,
+  });
 
   return (
     <section id="about" className="py-12 md:grid md:grid-cols-2 md:gap-6">
