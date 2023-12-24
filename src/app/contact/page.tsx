@@ -1,5 +1,5 @@
 import PageHeader from "../components/PageHeader";
-import { Button, Card, CardBody, Divider, Link } from "@nextui-org/react";
+import { Button, Card, CardBody, Link } from "@nextui-org/react";
 
 export default function Contact() {
   return (

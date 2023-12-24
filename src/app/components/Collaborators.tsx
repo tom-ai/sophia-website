@@ -1,6 +1,4 @@
-import createApolloClient from "../utils/apollo-client";
-import { gql } from "@apollo/client";
-import { Button, Link, Spacer } from "@nextui-org/react";
+import { Button, Link } from "@nextui-org/react";
 import SectionHeader from "./SectionHeader";
 import PostList from "./PostList";
 import { performRequest } from "../lib/datocms";
