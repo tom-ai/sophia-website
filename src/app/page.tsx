@@ -1,5 +1,3 @@
-import createApolloClient from "./utils/apollo-client";
-import { gql } from "@apollo/client";
 import Image from "next/image";
 import { Collaborators } from "./components/Collaborators";
 import { Button, Link } from "@nextui-org/react";
