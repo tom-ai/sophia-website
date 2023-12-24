@@ -1,9 +1,8 @@
-import createApolloClient from "./utils/apollo-client";
-import { gql } from "@apollo/client";
 import Image from "next/image";
 import { Collaborators } from "./components/Collaborators";
 import { Button, Link } from "@nextui-org/react";
 import SectionHeader from "./components/SectionHeader";
+import { performRequest } from "./lib/datocms";
 
 export default function Home() {
   return (
@@ -18,27 +17,24 @@ export default function Home() {
 }
 
 async function Hero() {
-  async function getData() {
-    const client = createApolloClient();
-    const { data } = await client.query({
-      query: gql`
-        query HeroSection {
-          heroSection {
-            title
-            body
-            ctaText
-            image {
-              url
-              title
-              alt
-            }
-          }
-        }
-      `,
-    });
-    return data;
-  }
-  const { heroSection } = await getData();
+  const PAGE_CONTENT_QUERY = `
+  query Hero {
+    heroSection {
+      title
+      body
+      ctaText
+      image {
+        url
+        title
+        alt
+      }
+    }
+  }`;
+
+  const { heroSection } = await performRequest({
+    query: PAGE_CONTENT_QUERY,
+    revalidate: false, // update performRequest with types, make revalidate either false, 0 or a number
+  });
 
   return (
     <header className="py-12 md:grid md:h-screen md:grid-cols-2 md:grid-rows-1 md:gap-6 2xl:h-[50vh]">
@@ -79,28 +75,24 @@ async function Hero() {
 }
 
 async function About() {
-  async function getData() {
-    const client = createApolloClient();
-    const { data } = await client.query({
-      query: gql`
-        query AboutSection {
-          aboutSection {
-            title
-            body
-            ctaText
-            image {
-              url
-              title
-              alt
-            }
-          }
+  const PAGE_CONTENT_QUERY = `
+    query AboutSection {
+      aboutSection {
+        title
+        body
+        ctaText
+        image {
+          url
+          title
+          alt
         }
-      `,
-    });
-    return data;
-  }
+      }
+    }`;
 
-  const { aboutSection } = await getData();
+  const { aboutSection } = await performRequest({
+    query: PAGE_CONTENT_QUERY,
+    revalidate: false,
+  });
 
   return (
     <section id="about" className="py-12 md:grid md:grid-cols-2 md:gap-6">

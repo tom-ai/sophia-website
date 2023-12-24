@@ -1,39 +1,34 @@
-import createApolloClient from "../utils/apollo-client";
-import { gql } from "@apollo/client";
-import { Button, Link, Spacer } from "@nextui-org/react";
+import { Button, Link } from "@nextui-org/react";
 import SectionHeader from "./SectionHeader";
 import PostList from "./PostList";
+import { performRequest } from "../lib/datocms";
 
 export async function Collaborators() {
-  async function getData() {
-    const client = createApolloClient();
-    const { data } = await client.query({
-      query: gql`
-        query AllCollaborators {
-          allCollaborators {
-            id
-            name
-            slug
-          }
-          allPosts(orderBy: [date_DESC], first: 3) {
-            id
-            message
-            link
-            date
-            collaborators {
-              id
-              name
-              slug
-            }
-          }
+  const PAGE_CONTENT_QUERY = `
+    query Collaborators {
+      allCollaborators {
+        id
+        name
+        slug
+      }
+      allPosts(orderBy: [date_DESC], first: 3) {
+        id
+        message
+        link
+        date
+        collaborators {
+          id
+          name
+          slug
         }
-      `,
-    });
+      }
+    }
+    `;
 
-    return data;
-  }
-
-  const { allCollaborators, allPosts } = await getData();
+  const { allCollaborators, allPosts } = await performRequest({
+    query: PAGE_CONTENT_QUERY,
+    revalidate: false,
+  });
 
   return (
     <section id="portfolio" className="flex flex-col items-center py-12">
