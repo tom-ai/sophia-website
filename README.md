@@ -15,3 +15,7 @@ Cloudflare offer free Email Routing. I've set it up so that any email to `contac
 To respond with `contact@sophiadignam.co.uk`, I've used Postmark to sign the domain and added the appropriate DNS records to Cloudflare.
 
 Details on the closed issue: https://github.com/tom-ai/session-musician-sd/issues/7
+
+## DatoCMS
+
+For CMS and data fetching, roughly following this: https://www.datocms.com/docs/next-js
