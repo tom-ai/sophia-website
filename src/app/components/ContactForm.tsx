@@ -3,7 +3,7 @@ import { useForm, ValidationError } from "@formspree/react";
 import { Button } from "@nextui-org/react";
 
 export default function ContactForm() {
-  const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORM || "");
+  const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORM || "luiygoi");
 
   if (state.succeeded) {
     return <p>Thanks for your submission!</p>;
