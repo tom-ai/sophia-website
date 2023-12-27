@@ -1,15 +1,17 @@
 # Sophia Dignam
 
-Viola and violin session musician
+Viola and violin session musician website.
 
-Live at http://session-musician-sd.vercel.app
+Live at http://www.sophiadignam.co.uk
 
-## Portfolio
+## Hosting and Domain
 
-A portfolio of gigs and collaborations is part of the site, under "Latest Work", and via artist tags.
+Hosted on Vercel with custom domain registered with Cloudflare
 
-## CTA
+## Email
 
-The main call to action is to Contact Sophia. Currently possible via Instagram.
+Cloudflare offer free Email Routing. I've set it up so that any email to `contact@sophiadignam.co.uk` gets routed to her Gmail account. This has the benefit of hiding her personal email online whilst looking professional, and removes the need to open a separate mailbox.
 
-I am warey of putting phone number and email address directly on the page, for issues with spam.
+To respond with `contact@sophiadignam.co.uk`, I've used Postmark to sign the domain and added the appropriate DNS records to Cloudflare.
+
+Details on the closed issue: https://github.com/tom-ai/session-musician-sd/issues/7
