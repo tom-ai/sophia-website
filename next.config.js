@@ -20,7 +20,7 @@ const nextConfig = {
     {
       source: "/:path*",
       headers: {
-        key: "x-robots-tag",
+        key: "X-Robots-Tag",
         value: "noindex",
       },
     },
