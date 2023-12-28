@@ -11,8 +11,35 @@ const config: Config = {
   ],
   theme: {
     colors: { harmonyPalette },
+    fontWeight: {
+      normal: "400",
+      bold: "700",
+    },
   },
   darkMode: "class",
-  plugins: [nextui()],
+  plugins: [
+    require("@tailwindcss/typography"),
+    nextui({
+      themes: {
+        "purple-dark": {
+          extend: "dark", // <- inherit default values from dark theme
+          colors: {
+            background: "#0D001A",
+            foreground: "#ffffff",
+            primary: {
+              DEFAULT: "#DD62ED",
+              foreground: "#ffffff",
+            },
+          },
+        },
+      },
+      layout: {
+        radius: {
+          medium: "2px",
+          large: "2px",
+        },
+      },
+    }),
+  ],
 };
 export default config;

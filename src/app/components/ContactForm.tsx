@@ -12,7 +12,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contact" className="py-12">
+    <section id="contact" className="py-12 md:w-2/3">
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <Input
           id="email"

@@ -12,7 +12,7 @@ export default function PageHeader({
   return (
     <header className={`py-12 text-${direction}`}>
       <hgroup>
-        <h2 className="text-3xl font-bold">{title}</h2>
+        <h1 className="text-3xl font-bold">{title}</h1>
         {children}
       </hgroup>
     </header>
