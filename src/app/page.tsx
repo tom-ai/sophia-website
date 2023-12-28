@@ -100,7 +100,6 @@ async function About() {
     revalidate: false,
   });
 
-  console.log(aboutSection.body.value.document.children);
   return (
     <section id="about" className="py-12 md:grid md:grid-cols-2 md:gap-6">
       <figure className="relative h-96">
