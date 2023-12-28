@@ -27,13 +27,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body className={`${spaceMono.className} container mx-auto p-4`}>
         <Providers>
           <Navbar shouldHideOnScroll>
             <NavbarBrand>
               <Link href={"/"} color="foreground">
-                <h1 className="font-medium tracking-tighter">Sophia Dignam</h1>
+                <span className="font-medium tracking-tighter">SD_</span>
               </Link>
             </NavbarBrand>
             <NavbarContent justify="end">

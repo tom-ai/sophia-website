@@ -21,6 +21,7 @@ async function Hero() {
   query Hero {
     heroSection {
       title
+      subtitle
       body
       ctaText
       image {
@@ -40,8 +41,11 @@ async function Hero() {
     <header className="py-12 md:grid md:h-screen md:grid-cols-2 md:grid-rows-1 md:gap-6 2xl:h-[50vh]">
       <div>
         <hgroup className="mb-8">
-          <h2 className="mb-3 max-w-md text-3xl font-bold md:text-4xl">
+          <h1 className="mb-6 max-w-md text-3xl md:text-4xl">
             {heroSection.title}
+          </h1>
+          <h2 className="mb-3 max-w-md text-3xl font-bold md:text-4xl">
+            {heroSection.subtitle}
           </h2>
           <p>{heroSection.body}</p>
         </hgroup>
@@ -54,11 +58,11 @@ async function Hero() {
           </Button>
         </div>
       </div>
-      <div className="md:flex md:items-start md:justify-center">
+      <div className="order-first md:flex md:items-start md:justify-center">
         <figure className="relative h-96 w-full md:h-4/5">
           <Image
             src={heroSection.image.url}
-            objectFit="cover"
+            className="object-cover"
             fill
             sizes="(min-width: 808px) 50vw, 100vw"
             alt={heroSection.image.alt}
@@ -99,8 +103,8 @@ async function About() {
         <Image
           src={aboutSection.image.url}
           fill
+          className="object-cover"
           sizes="(min-width: 808px) 50vw, 100vw"
-          objectFit="cover"
           alt={aboutSection.image.alt}
         />
         <figcaption>{aboutSection.image.title}</figcaption>

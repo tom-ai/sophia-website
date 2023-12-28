@@ -19,15 +19,23 @@ const config: Config = {
   darkMode: "class",
   plugins: [
     nextui({
-      // themes: {
-      //   // prettier-ignore
-      //   "session": {
-      //     extend: "dark",
-      //   },
-      // },
+      themes: {
+        "purple-dark": {
+          extend: "dark", // <- inherit default values from dark theme
+          colors: {
+            background: "#0D001A",
+            foreground: "#ffffff",
+            primary: {
+              DEFAULT: "#DD62ED",
+              foreground: "#ffffff",
+            },
+          },
+        },
+      },
       layout: {
         radius: {
           medium: "2px",
+          large: "2px",
         },
       },
     }),

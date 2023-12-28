@@ -40,11 +40,10 @@ export async function Collaborators() {
           <li key={collaborator.id}>
             <Button
               as={Link}
-              color="secondary"
               isBlock
               href={`latest-work/${collaborator.slug}`}
               size="lg"
-              variant="flat"
+              // variant="flat"
             >
               {collaborator.name}
             </Button>
