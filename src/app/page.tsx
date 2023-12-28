@@ -3,6 +3,7 @@ import { Collaborators } from "./components/Collaborators";
 import { Button, Link } from "@nextui-org/react";
 import SectionHeader from "./components/SectionHeader";
 import { performRequest } from "./lib/datocms";
+import BodyText from "./components/BodyText";
 
 export default function Home() {
   return (
@@ -82,7 +83,9 @@ async function About() {
     query AboutSection {
       aboutSection {
         title
-        body
+        body {
+          value
+        }
         ctaText
         image {
           url
@@ -97,6 +100,7 @@ async function About() {
     revalidate: false,
   });
 
+  console.log(aboutSection.body.value.document.children);
   return (
     <section id="about" className="py-12 md:grid md:grid-cols-2 md:gap-6">
       <figure className="relative h-96">
@@ -113,11 +117,9 @@ async function About() {
         <SectionHeader title={aboutSection.title} direction="right">
           <p>Violin, viola and electric violinist</p>
         </SectionHeader>
-        <p className="mb-8">{aboutSection.body}</p>
-
-        <Button as={Link} href="contact" color="primary" fullWidth>
-          Contact
-        </Button>
+        <div className="prose prose-invert">
+          <BodyText data={aboutSection.body} />
+        </div>
       </div>
     </section>
   );

@@ -18,6 +18,7 @@ const config: Config = {
   },
   darkMode: "class",
   plugins: [
+    require("@tailwindcss/typography"),
     nextui({
       themes: {
         "purple-dark": {
