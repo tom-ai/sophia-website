@@ -5,21 +5,12 @@ import { Button, Divider, Link } from "@nextui-org/react";
 export default function Contact() {
   return (
     <>
-      <PageHeader title="Contact" />
-      <main>
-        <section className="py-12">
-          <p>Drop me a message!</p>
+      <PageHeader direction="center" title="Contact">
+        Drop me a message!
+      </PageHeader>
+      <main className="md:flex md:justify-center">
+        <section className="py-12 md:w-2/3">
           <ContactForm />
-          <Button
-            as={Link}
-            href="https://www.instagram.com/sophiayadig/"
-            fullWidth
-            color="secondary"
-            rel="noreferrer me"
-            className="mt-12"
-          >
-            Follow on Instagram
-          </Button>
         </section>
       </main>
     </>
