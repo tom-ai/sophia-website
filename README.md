@@ -16,6 +16,10 @@ To respond with `contact@sophiadignam.co.uk`, I've used Postmark to sign the dom
 
 Details on the closed issue: https://github.com/tom-ai/session-musician-sd/issues/7
 
+## Contact Form
+
+Form uses the free https://formspree.io. Messages are sent to `contact@sophiadignam.co.uk` email
+
 ## DatoCMS
 
 For CMS and data fetching, roughly following this: https://www.datocms.com/docs/next-js
