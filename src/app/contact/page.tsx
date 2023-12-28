@@ -1,29 +1,15 @@
+import ContactForm from "../components/ContactForm";
 import PageHeader from "../components/PageHeader";
-import { Button, Card, CardBody, Link } from "@nextui-org/react";
 
 export default function Contact() {
   return (
     <>
-      <PageHeader title="Contact">Let's work together</PageHeader>
-      <main>
-        <section className="py-12">
-          <Card>
-            <CardBody className="flex h-36 items-center justify-center">
-              <p>
-                <em>Contact form coming soon!</em>
-              </p>
-            </CardBody>
-          </Card>
-          <Button
-            as={Link}
-            href="https://www.instagram.com/sophiayadig/"
-            fullWidth
-            color="secondary"
-            rel="noreferrer me"
-            className="mt-8"
-          >
-            Follow on Instagram
-          </Button>
+      <PageHeader direction="center" title="Contact">
+        Drop me a message!
+      </PageHeader>
+      <main className="md:flex md:justify-center">
+        <section className="py-12 md:w-2/3">
+          <ContactForm />
         </section>
       </main>
     </>

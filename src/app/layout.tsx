@@ -62,8 +62,8 @@ function Footer() {
   return (
     <footer>
       <Divider />
-      <div className="md:flex md:justify-between">
-        <nav className="py-8">
+      <div className="py-8 md:flex md:justify-between">
+        <nav>
           <ul>
             <li>
               <Link href={"/"} color="foreground">
@@ -77,14 +77,23 @@ function Footer() {
             </li>
           </ul>
         </nav>
-        <address className="order-first py-8">
-          <p>
-            <strong>Sophia Dignam</strong>
-          </p>
-          <p className="mb-3">Viola and Violin Session Musician</p>
-          <a href="https://www.instagram.com/sophiayadig/" target="_blank">
-            Follow on Instagram
-          </a>
+        <address className="not-italic">
+          <ul>
+            <li>
+              <a
+                href="https://www.instagram.com/sophiayadig/"
+                rel="noreferrer me"
+              >
+                Instagram
+              </a>
+            </li>
+            <br />
+            <li>
+              <a href="mailto:contact@sophiadignam.co.uk">
+                contact@sophiadignam.co.uk
+              </a>
+            </li>
+          </ul>
         </address>
       </div>
       <Divider />
