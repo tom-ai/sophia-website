@@ -1,13 +1,14 @@
 import ContactForm from "../components/ContactForm";
 import PageHeader from "../components/PageHeader";
-import { Button, Card, CardBody, Link } from "@nextui-org/react";
+import { Button, Divider, Link } from "@nextui-org/react";
 
 export default function Contact() {
   return (
     <>
-      <PageHeader title="Contact">Let's work together</PageHeader>
+      <PageHeader title="Contact" />
       <main>
         <section className="py-12">
+          <p>Drop me a message!</p>
           <ContactForm />
           <Button
             as={Link}
@@ -15,7 +16,7 @@ export default function Contact() {
             fullWidth
             color="secondary"
             rel="noreferrer me"
-            className="mt-8"
+            className="mt-12"
           >
             Follow on Instagram
           </Button>
