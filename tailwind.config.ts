@@ -11,6 +11,10 @@ const config: Config = {
   ],
   theme: {
     colors: { harmonyPalette },
+    fontWeight: {
+      normal: "300",
+      bold: "800",
+    },
   },
   darkMode: "class",
   plugins: [nextui()],

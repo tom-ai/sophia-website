@@ -3,7 +3,6 @@ import { Collaborators } from "./components/Collaborators";
 import { Button, Link } from "@nextui-org/react";
 import SectionHeader from "./components/SectionHeader";
 import { performRequest } from "./lib/datocms";
-import ContactForm from "./components/ContactForm";
 
 export default function Home() {
   return (
