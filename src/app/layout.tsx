@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="light">
+    <html lang="en">
       <body className={`${spaceMono.className} container mx-auto p-4`}>
         <Providers>
           <Navbar shouldHideOnScroll>

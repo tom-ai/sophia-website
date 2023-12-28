@@ -17,6 +17,20 @@ const config: Config = {
     },
   },
   darkMode: "class",
-  plugins: [nextui()],
+  plugins: [
+    nextui({
+      // themes: {
+      //   // prettier-ignore
+      //   "session": {
+      //     extend: "dark",
+      //   },
+      // },
+      layout: {
+        radius: {
+          medium: "2px",
+        },
+      },
+    }),
+  ],
 };
 export default config;

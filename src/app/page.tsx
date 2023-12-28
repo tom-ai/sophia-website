@@ -64,7 +64,6 @@ async function Hero() {
             alt={heroSection.image.alt}
             priority
           />
-
           <figcaption className="text-right">
             {heroSection.image.title}
           </figcaption>
@@ -106,7 +105,6 @@ async function About() {
         />
         <figcaption>{aboutSection.image.title}</figcaption>
       </figure>
-
       <div className="pt-8">
         <SectionHeader title={aboutSection.title} direction="right">
           <p>Violin, viola and electric violinist</p>
