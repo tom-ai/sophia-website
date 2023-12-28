@@ -1,6 +1,5 @@
 import ContactForm from "../components/ContactForm";
 import PageHeader from "../components/PageHeader";
-import { Button, Divider, Link } from "@nextui-org/react";
 
 export default function Contact() {
   return (
