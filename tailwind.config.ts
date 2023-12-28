@@ -12,8 +12,8 @@ const config: Config = {
   theme: {
     colors: { harmonyPalette },
     fontWeight: {
-      normal: "300",
-      bold: "800",
+      normal: "400",
+      bold: "700",
     },
   },
   darkMode: "class",

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Syne, JetBrains_Mono } from "next/font/google";
+import { Space_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import {
@@ -12,10 +12,9 @@ import {
   Divider,
 } from "@nextui-org/react";
 
-const syne = Syne({ subsets: ["latin"], weight: ["400", "500", "800"] });
-const jetBrains = JetBrains_Mono({
+const spaceMono = Space_Mono({
   subsets: ["latin"],
-  weight: ["200", "300", "800"],
+  weight: ["400", "700"],
 });
 export const metadata: Metadata = {
   title: "Session Musician SD",
@@ -28,8 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${jetBrains.className} container mx-auto p-4`}>
+    <html lang="en" className="light">
+      <body className={`${spaceMono.className} container mx-auto p-4`}>
         <Providers>
           <Navbar shouldHideOnScroll>
             <NavbarBrand>
