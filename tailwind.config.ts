@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 import harmonyPalette from "@evilmartians/harmony/tailwind";
 import { nextui } from "@nextui-org/react";
+import palette from "@evilmartians/harmony/base";
 
 const config: Config = {
   content: [
@@ -19,8 +20,33 @@ const config: Config = {
   darkMode: "class",
   plugins: [
     require("@tailwindcss/typography"),
+
+    // when extendning colors, "" wipes out everything,
+    // so comment out unused lines
+
     nextui({
       themes: {
+        session: {
+          extend: "dark",
+          colors: {
+            primary: {
+              DEFAULT: "#0c8aca", // primary
+              // foreground: "#ECEDEE", // text on primary
+            },
+            secondary: {
+              DEFAULT: "#9572cd", // secondary
+              // foreground: "", // text on secondary
+            },
+            warning: {
+              DEFAULT: "#d7b75e", // warning
+              // foreground: "", text on warning
+            },
+            background: "#000000", // background
+            foreground: "#ECEDEE", // text on background
+            focus: "#2caff9", // focus
+            // default: "", // "base"
+          },
+        },
         "purple-dark": {
           extend: "dark", // <- inherit default values from dark theme
           colors: {

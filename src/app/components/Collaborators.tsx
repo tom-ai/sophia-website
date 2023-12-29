@@ -43,7 +43,7 @@ export async function Collaborators() {
               isBlock
               href={`latest-work/${collaborator.slug}`}
               size="lg"
-              // variant="flat"
+              color="warning"
             >
               {collaborator.name}
             </Button>
