@@ -23,3 +23,7 @@ Form uses the free https://formspree.io. Messages are sent to `contact@sophiadig
 ## DatoCMS
 
 For CMS and data fetching, roughly following this: https://www.datocms.com/docs/next-js
+
+## Colors
+
+As in issue: https://github.com/tom-ai/session-musician-sd/issues/22
