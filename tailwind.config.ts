@@ -20,10 +20,6 @@ const config: Config = {
   darkMode: "class",
   plugins: [
     require("@tailwindcss/typography"),
-
-    // when extendning colors, "" wipes out everything,
-    // so comment out unused lines
-
     nextui({
       themes: {
         session: {
