@@ -27,15 +27,15 @@ const config: Config = {
           colors: {
             primary: {
               DEFAULT: "#0c8aca", // primary
-              // foreground: "#ECEDEE", // text on primary
+              foreground: "#eaf5fe", // text on primary
             },
             secondary: {
               DEFAULT: "#9572cd", // secondary
-              // foreground: "", // text on secondary
+              foreground: "#f6f2fe", // text on secondary
             },
             warning: {
               DEFAULT: "#d7b75e", // warning
-              // foreground: "", text on warning
+              foreground: "#3a2c00", // text on warning
             },
             background: "#000000", // background
             foreground: "#ECEDEE", // text on background
