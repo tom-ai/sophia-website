@@ -6,5 +6,9 @@ type BodyTextProps = {
 };
 
 export default function BodyText({ data }: BodyTextProps) {
-  return <StructuredText data={data} />;
+  return (
+    <div className="prose prose-invert">
+      <StructuredText data={data} />
+    </div>
+  );
 }
