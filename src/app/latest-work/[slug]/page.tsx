@@ -3,6 +3,7 @@ import PostList from "@/app/components/PostList";
 import PageHeader from "@/app/components/PageHeader";
 import { Button, Link, Spacer } from "@nextui-org/react";
 import { performRequest } from "@/app/lib/datocms";
+import BodyText from "@/app/components/BodyText";
 
 export async function generateStaticParams() {
   const PAGE_CONTENT_QUERY = `
@@ -32,6 +33,9 @@ export default async function LatestWork({
         id
         slug
         name
+        body {
+          value
+        }
         posts {
           id
           message
@@ -59,6 +63,7 @@ export default async function LatestWork({
       <PageHeader title={collaborator.name}></PageHeader>
       <main>
         <section className="flex flex-col gap-4 py-12">
+          <BodyText data={collaborator.body} />
           {collaborator.posts.length > 0 ? (
             <PostList posts={collaborator.posts} />
           ) : (
