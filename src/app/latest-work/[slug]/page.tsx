@@ -41,6 +41,15 @@ export default async function LatestWork({
           message
           date
           link
+          embed {
+            height
+            provider
+            providerUid
+            thumbnailUrl
+            title
+            url
+            width
+          }
           collaborators {
             id
             name
@@ -58,7 +67,6 @@ export default async function LatestWork({
 
   if (!collaborator) return notFound();
 
-  // console.log(collaborator.embed);
   return (
     <>
       <header className="pt-12">

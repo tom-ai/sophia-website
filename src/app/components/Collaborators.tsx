@@ -16,6 +16,15 @@ export async function Collaborators() {
         message
         link
         date
+        embed {
+          height
+          provider
+          providerUid
+          thumbnailUrl
+          title
+          url
+          width
+        }
         collaborators {
           id
           name
