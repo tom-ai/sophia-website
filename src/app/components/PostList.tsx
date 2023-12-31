@@ -18,7 +18,6 @@ export default function PostList({ posts }: PostListProps) {
               className="object-cover"
             />
           </div>
-
           <div className="flex flex-col justify-between space-y-4">
             <div className="flex flex-col">
               <time>
@@ -42,7 +41,7 @@ export default function PostList({ posts }: PostListProps) {
                 </Chip>
               ))}
             </div>
-            <Link isExternal showAnchorIcon href={post.link}>
+            <Link isExternal showAnchorIcon href={post.embed.url}>
               Visit content on YouTube.
             </Link>
           </div>
