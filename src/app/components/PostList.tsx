@@ -17,8 +17,8 @@ export default function PostList({ posts }: PostListProps) {
   return posts.map((post: any) => (
     <Card className="">
       <article>
-        <CardBody className="flex flex-row gap-3">
-          <div className="relative flex aspect-video h-28">
+        <CardBody className="flex gap-3 md:flex-row">
+          <div className="relative my-auto flex aspect-video h-28">
             <Image
               src={post.embed.thumbnailUrl}
               alt={post.embed.title}
