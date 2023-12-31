@@ -58,6 +58,7 @@ export default async function LatestWork({
 
   if (!collaborator) return notFound();
 
+  // console.log(collaborator.embed);
   return (
     <>
       <header className="pt-12">
