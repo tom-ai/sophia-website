@@ -10,11 +10,7 @@ const nextConfig = {
     ];
   },
   images: {
-    remotePatterns: [
-      {
-        hostname: "www.datocms-assets.com",
-      },
-    ],
+    domains: ["www.datocms-assets.com", "i.ytimg.com"],
   },
   async headers() {
     return [

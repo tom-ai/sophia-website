@@ -3,6 +3,7 @@ import PostList from "@/app/components/PostList";
 import PageHeader from "@/app/components/PageHeader";
 import { Button, Link, Spacer } from "@nextui-org/react";
 import { performRequest } from "@/app/lib/datocms";
+import BodyText from "@/app/components/BodyText";
 
 export async function generateStaticParams() {
   const PAGE_CONTENT_QUERY = `
@@ -32,11 +33,23 @@ export default async function LatestWork({
         id
         slug
         name
+        body {
+          value
+        }
         posts {
           id
           message
           date
           link
+          embed {
+            height
+            provider
+            providerUid
+            thumbnailUrl
+            title
+            url
+            width
+          }
           collaborators {
             id
             name
@@ -56,19 +69,29 @@ export default async function LatestWork({
 
   return (
     <>
-      <PageHeader title={collaborator.name}></PageHeader>
+      <header className="pt-12">
+        <h1 className="text-3xl">Sophia Dignam &</h1>
+        <br />
+        <h2 className="text-3xl font-bold">{collaborator.name}</h2>
+      </header>
       <main>
-        <section className="flex flex-col gap-4 py-12">
+        <section className="py-12">
+          <BodyText data={collaborator.body} />
+        </section>
+        <section className="py-12">
+          <h3 className="mb-6 text-2xl font-bold">Recent Gigs</h3>
           {collaborator.posts.length > 0 ? (
-            <PostList posts={collaborator.posts} />
+            <div className="flex flex-col gap-6">
+              <PostList posts={collaborator.posts} />
+            </div>
           ) : (
             <p>No posts yet!</p>
           )}
-
-          <Spacer />
-          <Button as={Link} href="/">
-            Go back
-          </Button>
+          <footer className="py-12">
+            <Button as={Link} href="/">
+              Go back
+            </Button>
+          </footer>
         </section>
       </main>
     </>

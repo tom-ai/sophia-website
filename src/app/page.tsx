@@ -116,9 +116,7 @@ async function About() {
         <SectionHeader title={aboutSection.title} direction="right">
           <p>Violin, viola and electric violinist</p>
         </SectionHeader>
-        <div className="prose prose-invert">
-          <BodyText data={aboutSection.body} />
-        </div>
+        <BodyText data={aboutSection.body} />
       </div>
     </section>
   );
