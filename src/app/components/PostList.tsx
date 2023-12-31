@@ -7,20 +7,20 @@ import {
   CardBody,
   CardFooter,
 } from "@nextui-org/react";
-import { Post } from "../types/types";
+import Image from "next/image";
 
 type PostListProps = {
-  posts: Post[];
+  posts: any;
 };
 
 export default function PostList({ posts }: PostListProps) {
-  return posts.map((post: Post) => (
+  return posts.map((post: any) => (
     <Card className="">
       <article>
         <CardHeader>
           <div className="flex gap-2">
             <time>{post.date}</time>
-            {post.collaborators.map((collaborator) => (
+            {post.collaborators.map((collaborator: any) => (
               <Chip
                 key={collaborator.id}
                 color="secondary"
@@ -37,6 +37,7 @@ export default function PostList({ posts }: PostListProps) {
         <Divider />
         <CardBody>
           <blockquote>{post.message}</blockquote>
+          {/* <Image src={} /> */}
         </CardBody>
         <Divider />
         <CardFooter>
