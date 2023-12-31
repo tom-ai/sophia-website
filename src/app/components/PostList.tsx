@@ -1,12 +1,4 @@
-import {
-  Card,
-  CardHeader,
-  Chip,
-  Link,
-  Divider,
-  CardBody,
-  CardFooter,
-} from "@nextui-org/react";
+import { Card, Chip, Link, CardBody } from "@nextui-org/react";
 import Image from "next/image";
 
 type PostListProps = {
