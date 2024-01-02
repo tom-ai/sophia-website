@@ -11,6 +11,7 @@ import {
   Button,
   Divider,
 } from "@nextui-org/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const spaceMono = Space_Mono({
   subsets: ["latin"],
@@ -52,6 +53,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </Providers>
+        <SpeedInsights />
       </body>
     </html>
   );

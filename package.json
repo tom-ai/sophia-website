@@ -14,6 +14,7 @@
     "@formspree/react": "^2.5.1",
     "@nextui-org/react": "^2.2.9",
     "@strapi/blocks-react-renderer": "^1.0.0-beta.0",
+    "@vercel/speed-insights": "^1.0.2",
     "framer-motion": "^10.16.12",
     "graphql": "^16.8.1",
     "isomorphic-dompurify": "^1.9.0",
