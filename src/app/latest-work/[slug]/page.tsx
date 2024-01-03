@@ -63,7 +63,6 @@ export default async function LatestWork({
     revalidate: false,
   });
 
-  console.log(collaborator);
   if (!collaborator) return notFound();
 
   return (
