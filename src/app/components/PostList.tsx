@@ -45,7 +45,9 @@ export default function PostList({ posts }: PostListProps) {
             </div>
             {post.embed && (
               <Link isExternal showAnchorIcon href={post.embed.url}>
-                Visit content on YouTube.
+                Visit content on{" "}
+                {post.embed.provider.charAt(0).toUpperCase() +
+                  post.embed.provider.slice(1)}
               </Link>
             )}
           </div>

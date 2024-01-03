@@ -10,7 +10,12 @@ const nextConfig = {
     ];
   },
   images: {
-    domains: ["www.datocms-assets.com", "i.ytimg.com"],
+    domains: [
+      "www.datocms-assets.com",
+      "i.ytimg.com",
+      "i.vimeocdn.com",
+      "scontent-lhr8-2.xx.fbcdn.net",
+    ],
   },
 };
 
