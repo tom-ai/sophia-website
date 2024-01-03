@@ -11,7 +11,7 @@ export default function SectionHeader({
 }: SectionHeaderProps) {
   return (
     <hgroup className={`text-${direction} mb-8`}>
-      <h3 className="text-2xl font-bold md:text-3xl">{title}</h3>
+      <h2 className="text-2xl font-bold md:text-3xl">{title}</h2>
       {children}
     </hgroup>
   );
