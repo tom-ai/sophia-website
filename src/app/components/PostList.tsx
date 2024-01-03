@@ -10,14 +10,16 @@ export default function PostList({ posts }: PostListProps) {
     <Card className="">
       <article>
         <CardBody className="flex gap-3 md:flex-row">
-          <div className="relative my-auto flex aspect-video h-28">
-            <Image
-              src={post.embed.thumbnailUrl}
-              alt={post.embed.title}
-              fill
-              className="object-cover"
-            />
-          </div>
+          {post.embed && (
+            <div className="relative my-auto flex aspect-video h-28">
+              <Image
+                src={post.embed.thumbnailUrl}
+                alt={post.embed.title}
+                fill
+                className="object-cover"
+              />
+            </div>
+          )}
           <div className="flex flex-col justify-between space-y-4">
             <div className="flex flex-col">
               <time>
@@ -41,9 +43,11 @@ export default function PostList({ posts }: PostListProps) {
                 </Chip>
               ))}
             </div>
-            <Link isExternal showAnchorIcon href={post.embed.url}>
-              Visit content on YouTube.
-            </Link>
+            {post.embed && (
+              <Link isExternal showAnchorIcon href={post.embed.url}>
+                Visit content on YouTube.
+              </Link>
+            )}
           </div>
         </CardBody>
       </article>

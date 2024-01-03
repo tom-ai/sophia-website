@@ -14,7 +14,6 @@ export async function Collaborators() {
       allPosts(orderBy: [date_DESC], first: 3) {
         id
         message
-        link
         date
         embed {
           height
@@ -58,7 +57,7 @@ export async function Collaborators() {
           </li>
         ))}
       </ul>
-      <div className="mt-12 flex flex-col gap-12 md:w-3/5">
+      <div className="lg:max-w-4/5 mt-12 flex flex-col gap-12">
         <PostList posts={allPosts} />
       </div>
     </section>

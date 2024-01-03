@@ -39,7 +39,6 @@ export default async function LatestWork({
           id
           message
           date
-          link
           embed {
             height
             provider
@@ -64,6 +63,7 @@ export default async function LatestWork({
     revalidate: false,
   });
 
+  console.log(collaborator);
   if (!collaborator) return notFound();
 
   return (

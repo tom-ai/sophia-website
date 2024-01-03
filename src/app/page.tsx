@@ -24,7 +24,6 @@ async function Hero() {
       title
       subtitle
       body
-      ctaText
       image {
         url
         title
@@ -51,7 +50,7 @@ async function Hero() {
         </hgroup>
         <div className="mb-8 flex flex-col gap-3 md:items-start">
           <Button href="contact" as={Link} color="primary">
-            {heroSection.ctaText}
+            Contact
           </Button>
           <Button href="#about" as={Link} color="secondary">
             About Sophia
@@ -82,6 +81,7 @@ async function About() {
     query AboutSection {
       aboutSection {
         title
+        subtitle
         body {
           value
         }
@@ -113,7 +113,7 @@ async function About() {
       </figure>
       <div className="pt-8">
         <SectionHeader title={aboutSection.title} direction="right">
-          <p>Violin, viola and electric violinist</p>
+          <p>{aboutSection.subtitle}</p>
         </SectionHeader>
         <BodyText data={aboutSection.body} />
       </div>
