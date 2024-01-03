@@ -20,9 +20,10 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   title: {
     template: "%s | Sophia Dignam",
-    default: "Sophia Dignam",
+    default: "Sophia Dignam - Viola and violin session musician",
   },
-  description: "Viola and violin session musician based in Manchester, UK",
+  description:
+    "Sophia is a viola and violin session musician based in Manchester, UK",
   keywords: "Music, Viola, Strings, Orchestras, Manchester",
   metadataBase: new URL("https://www.sophiadignam.co.uk"),
 };
