@@ -81,12 +81,15 @@ function Footer() {
         <address className="not-italic">
           <ul>
             <li>
-              <a
+              <Link
+                isExternal
+                showAnchorIcon
                 href="https://www.instagram.com/sophiayadig/"
                 rel="noreferrer me"
+                color="foreground"
               >
                 Instagram
-              </a>
+              </Link>
             </li>
             <li>
               <a href="mailto:contact@sophiadignam.co.uk">
