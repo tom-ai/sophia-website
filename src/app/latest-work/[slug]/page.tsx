@@ -31,12 +31,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export async function generateStaticParams() {
   const PAGE_CONTENT_QUERY = `
-  query AllCollaborators {
-    allCollaborators {
-      slug
+    query AllCollaborators {
+      allCollaborators {
+        slug
+      }
     }
-  }
-  `;
+    `;
 
   const { allCollaborators } = await performRequest({
     query: PAGE_CONTENT_QUERY,
