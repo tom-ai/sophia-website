@@ -63,8 +63,8 @@ function Footer() {
   return (
     <footer>
       <Divider />
-      <div className="py-8 md:flex md:justify-between">
-        <nav className="mb-4 md:mb-0">
+      <div className="justify-center py-8 md:flex">
+        <nav className="mb-4 w-1/3 md:mb-0">
           <ul>
             <li>
               <Link href={"/"} color="foreground">
@@ -97,7 +97,7 @@ function Footer() {
         </address>
       </div>
       <Divider />
-      <div className="md:flex md:justify-between">
+      <div className="py-8 text-center">
         <p>
           <small>© 2023 Sophia Dignam</small>
         </p>
