@@ -3,6 +3,31 @@ import PostList from "@/app/components/PostList";
 import { Button, Link } from "@nextui-org/react";
 import { performRequest } from "@/app/lib/datocms";
 import BodyText from "@/app/components/BodyText";
+import { Metadata } from "next";
+
+type Props = {
+  params: { slug: string };
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const QUERY = `
+    query collaboratorBySlug($slug: String) {
+      collaborator(filter: { slug: { eq: $slug } }) {
+        name
+      }
+    }`;
+
+  const { collaborator } = await performRequest({
+    query: QUERY,
+    variables: { slug: params.slug },
+    revalidate: false,
+  });
+
+  return {
+    title: collaborator.name,
+    description: `Music and events with ${collaborator.name}`,
+  };
+}
 
 export async function generateStaticParams() {
   const PAGE_CONTENT_QUERY = `
@@ -21,11 +46,7 @@ export async function generateStaticParams() {
   return allCollaborators.map((collaborator: any) => collaborator.slug);
 }
 
-export default async function LatestWork({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function LatestWork({ params }: Props) {
   const PAGE_CONTENT_QUERY = `
     query collaboratorBySlug($slug: String) {
       collaborator(filter: { slug: { eq: $slug } }) {
