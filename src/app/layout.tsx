@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     default: "Sophia Dignam",
   },
   description: "Viola and violin session musician based in Manchester, UK",
-  keywords: "Music, Viola, Strings, Manchester",
+  keywords: "Music, Viola, Strings, Orchestras, Manchester",
   metadataBase: new URL("https://www.sophiadignam.co.uk"),
 };
 
