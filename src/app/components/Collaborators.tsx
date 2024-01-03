@@ -44,7 +44,7 @@ export async function Collaborators() {
       <div className="md:w-3/5">
         <SectionHeader title="Featured Artists & Events" direction="center" />
       </div>
-      <ul className="flex flex-wrap justify-center gap-3 md:w-4/5">
+      <ul className="flex flex-wrap justify-center gap-3 md:w-3/5">
         {allCollaborators.map((collaborator: any) => (
           <li key={collaborator.id}>
             <Button
@@ -58,7 +58,7 @@ export async function Collaborators() {
           </li>
         ))}
       </ul>
-      <div className="mt-12 flex flex-col gap-8">
+      <div className="mt-12 flex flex-col gap-12 md:w-3/5">
         <PostList posts={allPosts} />
       </div>
     </section>
