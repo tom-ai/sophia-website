@@ -4,6 +4,13 @@
 
 🛜 Live at http://www.sophiadignam.co.uk
 
+## Running the project locally
+
+1. Clone the repo
+2. Run `npm install`
+3. Create an `.env.local` file, add the environment variables
+4. Run `npm run dev` and it should load the project
+
 ## Hosting & Deployment
 
 Hosted on Vercel, they make deployment mega easy. Any pushes to `main` branch trigger a new production build.
