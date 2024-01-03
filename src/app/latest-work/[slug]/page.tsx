@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import PostList from "@/app/components/PostList";
-import PageHeader from "@/app/components/PageHeader";
-import { Button, Link, Spacer } from "@nextui-org/react";
+import { Button, Link } from "@nextui-org/react";
 import { performRequest } from "@/app/lib/datocms";
 import BodyText from "@/app/components/BodyText";
 
@@ -70,16 +69,18 @@ export default async function LatestWork({
   return (
     <>
       <header className="pt-12">
-        <h1 className="text-3xl">Sophia Dignam &</h1>
-        <br />
-        <h2 className="text-3xl font-bold">{collaborator.name}</h2>
+        <h1 className="text-3xl">
+          Sophia Dignam &
+          <br />
+          <span className="font-bold">{collaborator.name}</span>
+        </h1>
       </header>
       <main>
         <section className="py-12">
           <BodyText data={collaborator.body} />
         </section>
         <section className="py-12">
-          <h3 className="mb-6 text-2xl font-bold">Recent Gigs</h3>
+          <h2 className="mb-6 text-2xl font-bold">Recent Gigs</h2>
           {collaborator.posts.length > 0 ? (
             <div className="flex flex-col gap-6">
               <PostList posts={collaborator.posts} />

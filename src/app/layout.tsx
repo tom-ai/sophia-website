@@ -64,7 +64,7 @@ function Footer() {
     <footer>
       <Divider />
       <div className="py-8 md:flex md:justify-between">
-        <nav>
+        <nav className="mb-4 md:mb-0">
           <ul>
             <li>
               <Link href={"/"} color="foreground">
@@ -88,7 +88,6 @@ function Footer() {
                 Instagram
               </a>
             </li>
-            <br />
             <li>
               <a href="mailto:contact@sophiadignam.co.uk">
                 contact@sophiadignam.co.uk
@@ -100,7 +99,7 @@ function Footer() {
       <Divider />
       <div className="md:flex md:justify-between">
         <p>
-          <small>© Copyright 2023</small>
+          <small>© 2023 Sophia Dignam</small>
         </p>
         <p>
           <small>I hope you enjoyed my website! Built by Tom ❤️</small>

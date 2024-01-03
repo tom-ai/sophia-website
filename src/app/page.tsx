@@ -44,10 +44,9 @@ async function Hero() {
         <hgroup className="mb-8">
           <h1 className="mb-6 max-w-md text-3xl md:text-4xl">
             {heroSection.title}
+            <br />
+            <span className="mb-3 font-bold">{heroSection.subtitle}</span>
           </h1>
-          <h2 className="mb-3 max-w-md text-3xl font-bold md:text-4xl">
-            {heroSection.subtitle}
-          </h2>
           <p>{heroSection.body}</p>
         </hgroup>
         <div className="mb-8 flex flex-col gap-3 md:items-start">
