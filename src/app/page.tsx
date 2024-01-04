@@ -28,6 +28,7 @@ async function Hero() {
         url
         title
         alt
+        customData
       }
     }
   }`;
@@ -67,8 +68,20 @@ async function Hero() {
             alt={heroSection.image.alt}
             priority
           />
-          <figcaption className="text-right">
-            {heroSection.image.title}
+          <figcaption className="absolute bottom-0 -mb-8 text-foreground/50">
+            <small>
+              Image taken by{" "}
+              <Link
+                href={heroSection.image.customData.linkUrl}
+                isExternal
+                showAnchorIcon
+                color="foreground"
+                size="sm"
+                className="text-foreground/50"
+              >
+                {heroSection.image.customData.linkText}
+              </Link>
+            </small>
           </figcaption>
         </figure>
       </div>
@@ -109,7 +122,9 @@ async function About() {
           sizes="(min-width: 808px) 50vw, 100vw"
           alt={aboutSection.image.alt}
         />
-        <figcaption>{aboutSection.image.title}</figcaption>
+        <figcaption>
+          <small>{aboutSection.image.title}</small>
+        </figcaption>
       </figure>
       <div className="pt-8">
         <SectionHeader title={aboutSection.title} direction="right">
