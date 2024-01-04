@@ -34,7 +34,7 @@ async function Hero() {
 
   const { heroSection } = await performRequest({
     query: PAGE_CONTENT_QUERY,
-    revalidate: false, // update performRequest with types, make revalidate either false, 0 or a number
+    revalidate: 0, // update performRequest with types, make revalidate either false, 0 or a number
   });
 
   return (
@@ -96,7 +96,7 @@ async function About() {
 
   const { aboutSection } = await performRequest({
     query: PAGE_CONTENT_QUERY,
-    revalidate: false,
+    revalidate: 0,
   });
 
   return (
