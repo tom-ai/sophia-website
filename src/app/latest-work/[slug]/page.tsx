@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { collaborator } = await performRequest({
     query: QUERY,
     variables: { slug: params.slug },
-    revalidate: 0,
+    revalidate: false,
   });
 
   return {
@@ -40,7 +40,7 @@ export async function generateStaticParams() {
 
   const { allCollaborators } = await performRequest({
     query: PAGE_CONTENT_QUERY,
-    revalidate: 0,
+    revalidate: false,
   });
 
   return allCollaborators.map((collaborator: any) => collaborator.slug);
@@ -81,7 +81,7 @@ export default async function LatestWork({ params }: Props) {
   const { collaborator } = await performRequest({
     query: PAGE_CONTENT_QUERY,
     variables: { slug: params.slug },
-    revalidate: 0,
+    revalidate: false,
   });
 
   if (!collaborator) return notFound();
