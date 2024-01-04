@@ -35,7 +35,7 @@ export async function Collaborators() {
 
   const { allCollaborators, allPosts } = await performRequest({
     query: PAGE_CONTENT_QUERY,
-    revalidate: false,
+    revalidate: 0,
   });
 
   return (
