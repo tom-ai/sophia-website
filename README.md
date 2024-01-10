@@ -17,6 +17,13 @@ Hosted on Vercel, they make deployment mega easy. Any pushes to `main` branch tr
 
 Pushes to any other branch will tigger a preview build with a private URL.
 
+## CMS
+
+For the CMS we're using DatoCMS. It has a friendly interface for adding content, is free and doesn't require a second project to maintain.
+
+Data fetching is done on the server via HTTP. I've been roughly following this guide by DatoCMS:
+✅ https://www.datocms.com/docs/next-js
+
 ## Domain & Email
 
 The domain is registered with Cloudflare.
@@ -26,12 +33,6 @@ Cloudflare also offer free Email Routing. I've set it up so that any email to `c
 To respond with `contact@sophiadignam.co.uk`, I've used Postmark to sign the domain and added the appropriate DNS records to Cloudflare.
 
 Details on the closed issue: https://github.com/tom-ai/session-musician-sd/issues/7
-
-## CMS
-
-For the CMS we're using DatoCMS. It has a friendly interface for adding content, is free and doesn't require a second project to maintain.
-
-Data fetching is done on the server via HTTP. I've been roughly following this guide by DatoCMS: https://www.datocms.com/docs/next-js
 
 ## CSS, UI and Color
 
