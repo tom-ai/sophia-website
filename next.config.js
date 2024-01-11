@@ -17,19 +17,6 @@ const nextConfig = {
       "scontent-lhr8-2.xx.fbcdn.net",
     ],
   },
-  async headers() {
-    return [
-      {
-        source: "/:path*",
-        headers: [
-          {
-            key: "X-Robots-Tag",
-            value: "noindex",
-          },
-        ],
-      },
-    ];
-  },
 };
 
 module.exports = nextConfig;
