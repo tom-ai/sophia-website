@@ -15,14 +15,17 @@
 
 Hosted on Vercel, they make deployment mega easy. Any pushes to `main` branch trigger a new production build.
 
-Pushes to any other branch will tigger a preview build with a private URL.
+Pushes to any other branch will tigger a preview build, and a private URL (requires Vercel account) will be commented on the PR. 
 
 ## CMS
 
 For the CMS we're using DatoCMS. It has a friendly interface for adding content, is free and doesn't require a second project to maintain.
 
-Data fetching is done on the server via HTTP. I've been roughly following this guide by DatoCMS:
+Follow this guide on data fetching:
 ✅ https://www.datocms.com/docs/next-js
+
+Data fetching is done on the server via HTTP. 
+
 
 ## Domain & Email
 
