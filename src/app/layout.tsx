@@ -107,12 +107,17 @@ function Footer() {
       </div>
       <Divider />
       <div className="pb-4 pt-8 text-center">
+        
         <p>
+          <a href='https://encoremusicians.com/hire/violists?utm_source=badge&utm_medium=web&utm_campaign=verified_badge&utm_content=dark-small' target="_parent">
+            <img src='https://encoremusicians.com/img/embeds/badge-dark.svg' alt='Book Sophia Dignam on Encore Musicians' style='width: 80px; height: 80px;'/>
+          </a>
           <small>© 2023 Sophia Dignam</small>
         </p>
         <p>
           <small>I hope you enjoyed my website! Built by Tom ❤️</small>
         </p>
+        
       </div>
     </footer>
   );
