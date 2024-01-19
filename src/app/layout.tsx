@@ -106,6 +106,7 @@ function Footer() {
         </address>
       </div>
       <Divider />
+      
       <div className="pb-4 pt-8 text-center">
         <p>
           <small>© 2023 Sophia Dignam</small>
