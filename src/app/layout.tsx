@@ -106,6 +106,9 @@ function Footer() {
         </address>
       </div>
       <Divider />
+      <a href='https://encoremusicians.com/hire/violists?utm_source=badge&utm_medium=web&utm_campaign=verified_badge&utm_content=dark-small' target="_parent">
+        <img src='https://encoremusicians.com/img/embeds/badge-dark.svg' alt='Book Sophia Dignam on Encore Musicians' className="encore-image"/>
+        </a>
       <div className="pb-4 pt-8 text-center">
         <p>
           <small>© 2023 Sophia Dignam</small>
