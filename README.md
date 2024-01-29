@@ -6,6 +6,8 @@
 
 ## Running the project locally
 
+*Drop me a message for the environment variables* 👌
+
 1. Clone the repo
 2. Run `npm install`
 3. Create an `.env.local` file, add the environment variables
