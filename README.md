@@ -2,7 +2,6 @@
 
 🎻 Viola and violin session musician.
 
-🛜 Live at http://www.sophiadignam.co.uk
 
 ## Running the project locally
 
