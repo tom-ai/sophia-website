@@ -31,8 +31,6 @@ Data fetching is done on the server via HTTP.
 
 The domain is registered with Cloudflare.
 
-Email routing with `contact@sophiadignam.co.uk` protects a personal email address. Postmark can be configured for SMTP. 
-
 Details on the closed issue: https://github.com/tom-ai/session-musician-sd/issues/7
 
 ## CSS, UI and Color
