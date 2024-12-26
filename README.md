@@ -9,7 +9,7 @@
 
 1. Clone the repo
 2. Run `npm install`
-3. Create an `.env.local` file, add the environment variables
+3. In the root, create a `.env.local` file and add a `NEXT_DATOCMS_API_TOKEN="<replace-with-api-key>"` key-value pair
 4. Run `npm run dev` and it should load the project
 
 ## Hosting & Deployment
